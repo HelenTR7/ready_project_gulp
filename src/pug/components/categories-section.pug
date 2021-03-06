@@ -1,0 +1,26 @@
+include category-item-sm
+
++b('section').categories-section
+    .container
+        +e.__title.section-title Популярные категории
+        .row
+            .col-md-6.col-lg-3
+                +category-item-sm({
+                    img: './assets/imgs/category1.jpg',
+                    title: 'Вакууматоры'
+                })
+            .col-md-6.col-lg-3
+                +category-item-sm({
+                    img: './assets/imgs/category2.jpg',
+                    title: 'Чайники'
+                })
+            .col-md-6.col-lg-3
+                +category-item-sm({
+                    img: './assets/imgs/category3.jpg',
+                    title: 'Скороварки'
+                })
+            .col-md-6.col-lg-3
+                +category-item-sm({
+                    img: './assets/imgs/category4.jpg',
+                    title: 'Кофемашины'
+                })

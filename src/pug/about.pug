@@ -1,0 +1,81 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'О компании'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    include components/breadcrumb
+    +breadcrumb({
+        content1: 'О компании',
+    })
+    +b('section').pageheader
+        .container
+            +e('h1').__title.h1 О компании
+    +b.about.content-page.content.container
+        .h2 COMFORT-MAX – качественная техника немецких марок
+        p Компания COMFORT-MAX является официальным представительством на российском рынке техники немецких брендов AEG, BEEM, Bomann, Clatronic, ProfiCook, Rommelsbacher, Steba и голландских брендов AudioSonic, Princess, Tristar.
+        p Эта техника представлена в Европе во многих магазинах, например, MediaMarkt, Auchan, Selgros и Globus. 95% техники этих марок продается именно в Европе.
+        .h2 Официальный представитель 14 европейских марок бытовой техники
+        +e.__swiper.swiper.js-swiper-about
+            .swiper-container
+                .swiper-wrapper
+                    mixin about-item(args={})
+                        +b.about-item
+                            +e.__date=args.date
+                            +e.__text=args.text
+                            +e.__row
+                                +e.__flag
+                                    img(src=args.flag alt=args.country)
+                                +e.__country=args.country
+                    +e.__slide.swiper-slide
+                        +about-item({
+                            date: 'c 2012',
+                            text: 'AEG, Bomann, Clatronic, Profi Cook',
+                            flag: './assets/imgs/countries/germany.svg',
+                            country: 'Германия',
+                        })
+                    +e.__slide.swiper-slide
+                        +about-item({
+                            date: 'c 2013',
+                            text: 'Steba, Rommelsbacher',
+                            flag: './assets/imgs/countries/germany.svg',
+                            country: 'Германия',
+                        })
+                    +e.__slide.swiper-slide
+                        +about-item({
+                            date: 'c 2014',
+                            text: 'Tristar, Princes',
+                            flag: './assets/imgs/countries/netherlands.svg',
+                            country: 'Нидерланды',
+                        })
+                    +e.__slide.swiper-slide
+                        +about-item({
+                            date: 'c 2015',
+                            text: 'CASO, Ellrona',
+                            flag: './assets/imgs/countries/germany.svg',
+                            country: 'Германия',
+                        })
+                    +e.__slide.swiper-slide
+                        +about-item({
+                            date: 'c 2016',
+                            text: 'Status',
+                            flag: './assets/imgs/countries/slovenia.svg',
+                            country: 'Словения',
+                        })
+                    +e.__slide.swiper-slide
+                        +about-item({
+                            date: 'c 2017',
+                            text: 'AEG, Bomann, Clatronic, Profi Cook',
+                            flag: './assets/imgs/countries/germany.svg',
+                            country: 'Германия',
+                        })
+            .swiper-button-prev.swiper-button-prev--about
+            .swiper-button-next.swiper-button-next--about
+        .h2 Немецкое – значит, качественное!
+        p Свою отличную репутацию немецкая техника завоевывала не одно десятилетие, ей доверяет огромное количество потребителей по всему миру. У популярности есть и обратная сторона: подделки и недобросовестные производители, готовые поставить слово «Germany» на упаковке товара, который не имеет никакого отношения к Германии.
+        p Компания COMFORT-MAX официально поставляет в Россию технику исконно немецких брендов: Clatronic, Bomann, AEG, ProfiCook, Steba, Rommelsbacher и BEEM. Bomann и AEG – имеют более чем 100-летнию историю, и все они – постоянные участники ежегодной Международной выставки потребительской электроники IFA в Берлине.
+        p Техника AEG, BEEM, Bomann, Clatronic, ProfiCook производится для Европы и США на строго отобранных предприятиях, где размещают свои заказы такие гиганты, как Philips, Braun, Rowenta, Tefal, Kenwood и другие. Качество продукции проходит 5 этапов контроля до поступления техники в продажу. Система контроля качества разработана под эгидой Немецкой торгово-промышленной палаты (IHK), ее эффективность подтверждается наличием у каждого изделия 6-7 сертификатов соответствия TÜF – (Независимой Немецкой Технической экспертизы) и многократным получением нашими приборами знака качества независимого немецкого издания «StiftungWarentest», проводящего сравнительные испытания качества различных товаров и потребительских услуг. Компании Steba и Rommelsbacher имеют собственное производство в Германии.
+
+

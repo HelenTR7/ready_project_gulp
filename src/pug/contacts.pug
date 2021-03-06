@@ -1,0 +1,60 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'Контакты'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    include components/breadcrumb
+    +breadcrumb({
+        content1: 'Контакты',
+    })
+    +b.contacts.container
+        .row
+            .col-lg-3
+                +b.pageheader
+                    +e('h1').__title.h1 Контакты
+                +b.contact-item
+                    +e('a').__link(href="tel:+84952231577") 8 (495) 223-15-77
+                    +e.__text ПН-ПТ с 09:00 до 17:00
+                +b.contact-item
+                    +e('a').__link(href="tel:+89646471577") 8 (964) 647-15-77
+                    +e.__text ПН-ПТ с 17:00 до 19:00, СБ-ВС 09:00 до 17:00
+                +b.contact-item
+                    +e('a').__link(href="mailto:sale@comfort-max.ru") sale@comfort-max.ru
+                    +e.__text Ответим на любые вопросы
+                +b.contact-item
+                    +e.__btn
+                        a(href="/").btn.btn--bordered
+                            +icon('i-repair')
+                            span.text Сервисные центры
+            +e.__right.col-lg-9
+                +e('form').__form
+                    +e.__form-title Обратная связь
+                    +e.__form-body.row
+                        .col-md-6
+                            .fieldgroup.fieldgroup--mb
+                                label.label Ваше имя *
+                                input.input(type="text" placeholder="Введите имя" required)
+                        .col-md-6
+                            .fieldgroup.fieldgroup--mb
+                                label.label E-mail *
+                                input.input(type="email" placeholder="Введите e-mail" required)
+                        .col-md-12
+                            .fieldgroup
+                                label.label Сообщение
+                                textarea.textarea(placeholder="Введите сообщение")
+                        +e.__form-row
+                            button.btn.btn--primary.btn--full Отправить
+                            +e.__form-text Нажимая на кнопку «Отправить», я даю согласие на обработку  персональных данных
+        +e.__requisites
+            +e.__requisites-title Реквизиты компании
+            +e.__requisites-text
+                p ИП Харьков Александр Владимирович
+                p ИНН  501803784710
+                p ОГРНИП  313501831900021
+                p Расчетный счет № 40802810300000004078
+                p Наименование банка: ПАО "ПРОМСВЯЗЬБАНК" г. Москва
+                p Корреспондентский счёт № 30101810400000000555 в ОПЕРУ МОСКОВСКОГО ГТУ БАНКА РОССИИ
+                p БИК 044525555 ИНН 7744000912 КПП 775001001

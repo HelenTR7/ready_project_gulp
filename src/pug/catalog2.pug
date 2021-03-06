@@ -1,0 +1,94 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'Каталог 2 уровень (2 вид фильтров)'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    include components/breadcrumb
+    +breadcrumb({
+        content1: 'Каталог',
+        href_content1: 'catalog-start.html',
+        content2: 'Приготовление напитков',
+        href_content2: 'catalog.html',
+        content3: 'Кофемашины',
+    })
+    .container
+        .category.row
+            aside.category__aside.col-lg-4.col-xl-3.mobile-filters.js-mobile-filters
+                .mobile-filters__title
+                    span Фильтры
+                    a(href="javascript:;").js-close-filters.mobile-filters__title-btn
+                        +icon('i-close')
+                .mobile-filters__body
+                    include components/filters-form
+                    +filters-form({
+                        mod_class: 'filters-form--classic'
+                    })
+            .col-lg-8.col-xl-9.category__main
+                +b.pageheader.category__pageheader
+                    +e('h1').__title.h1 Кофемашины
+                include components/sort-block
+                include components/active-filters-block
+                .row.js-view-box.category__items
+                    include components/product-item
+                    .col-6.col-xl-4
+                        +product-item({
+                            mod_class: 'product-item--catalog',
+                            inSlider: false,
+                            img: './assets/imgs/product1.png',
+                            title: 'Кофемашина Rommelsbacher EKS 3010',
+                            list: true,
+                            price: '59 900 руб',
+                            review_stars: 3,
+                            review_count: '5 отзывов',
+                        })
+                    .col-6.col-xl-4
+                        +product-item({
+                            mod_class: 'product-item--catalog',
+                            inSlider: false,
+                            img: './assets/imgs/product2.png',
+                            title: 'Кофеварка CASO Coffee Compact',
+                            list: true,
+                            price: '59 900 руб',
+                            review_stars: 3,
+                            review_count: '5 отзывов',
+                        })
+                    .col-6.col-xl-4
+                        +product-item({
+                            mod_class: 'product-item--catalog',
+                            inSlider: false,
+                            img: './assets/imgs/product3.png',
+                            title: 'Кофеварка CASO Coffee Compact',
+                            list: true,
+                            price: '59 900 руб',
+                            review_stars: 3,
+                            review_count: '5 отзывов',
+                        })
+                    .col-6.col-xl-4
+                        +product-item({
+                            mod_class: 'product-item--catalog',
+                            inSlider: false,
+                            img: './assets/imgs/product4.png',
+                            title: 'Кофемашина CASO Café Crema One',
+                            list: true,
+                            price: '59 900 руб',
+                            review_stars: 3,
+                            review_count: '5 отзывов',
+                        })
+                .btn-more-wrap
+                    a(href="catalog.html").btn.btn-more.loading
+                        +icon('i-more')
+                        span.text Показать еще 24 товара
+                .pagination
+                    a(href="").prev.disabled
+                        +icon('i-arr-l')
+                    span.current 1
+                    a(href="") 2
+                    span.dots ...
+                    a(href="") 10
+                    a(href="") 11
+                    a(href="").next
+                        +icon('i-arr-r')
+

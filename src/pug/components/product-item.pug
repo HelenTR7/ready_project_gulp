@@ -1,0 +1,51 @@
+mixin product-item(args={})
+    +b(class= args.mod_class || 'product-item')
+        if(args.inSlider)
+            +e('a').__img-wrap(href="product.html")
+                +e('img').__img.swiper-lazy(
+                    data-src=args.img
+                    alt=args.title)
+                if(args.badges)
+                    +e.__badges
+                        each badge in args.badges_list
+                            .badge=badge
+        else
+            +lazy-img({
+                img: args.img,
+                placeholder: pixel,
+                img_mod: 'product-item__img',
+                wrap_mod: 'product-item__img-wrap',
+                link: true,
+                aria_label: true,
+            })
+                if(args.badges)
+                    +e.__badges
+                        each badge in args.badges_list
+                            span.badge=badge
+        +e.__content-top
+            if(args.vendor_title)
+                +e('a').__title(href="product.html")
+                    span=args.title
+                    span=args.vendor_title
+            else
+                +e('a').__title(href="product.html")=args.title
+            if(args.list)
+                +e.__list
+                    span Приготовление фильтрованного свежезаваренного кофе
+                    span Приготовление эспрессо из молотых кофейных зёрен либо чалд
+                    span Чалды E.S.E. (Easy Serving Espresso) — 44 мм
+                    span Чалды Senseo — 68–70 мм
+                    span Вспенивание молока и нагрев воды (85°C)
+        +e.__content-bottom
+            +e.__price=args.price
+            if(!args.withoutRating)
+                +b.rating.product-item__rating
+                    +e.__stars(data-stars=args.review_stars)
+                        span.star
+                        span.star
+                        span.star
+                        span.star
+                        span.star
+                    +e.__count=args.review_count
+            +e.__btn
+                a(href="javascript:;").btn.btn--bordered.btn--small В корзину

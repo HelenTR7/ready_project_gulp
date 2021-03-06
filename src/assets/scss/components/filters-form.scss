@@ -1,0 +1,182 @@
+@import "../main/parameters";
+
+.filters-form {
+  &__clear {
+    .btn {
+      color: $c-text;
+      &:hover {
+        color: $c-primary;
+      }
+    }
+  }
+}
+.filter-block {
+  margin: 0 0 24px;
+  &__title {
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0 0 14px;
+    .icon {
+      height: 10px;
+      width: 10px;
+      fill: #BABABA;
+      margin: 0 0 0 10px;
+      position: relative;
+      top: 1px;
+    }
+    .title {}
+    .clear {
+      &:hover {
+        .icon {
+          fill: $c-primary;
+        }
+      }
+    }
+  }
+  &__fields {
+    &--manufacturer {
+      .label {
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+.mobile-filters {
+  &__title {
+    @media (min-width: $md) {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: $md - 1) {
+  .filters-form {
+    padding: 25px 16px;
+    height: 100%;
+    overflow-y: scroll;
+  }
+  .filter-block {
+    margin: 0 0 10px;
+  }
+  .mobile-filters {
+    &__title {
+      background: #F3F3F3;
+      padding: 14px 10px;
+      text-align: center;
+      position: relative;
+      font-weight: 600;
+      font-size: 18px;
+      color: #4F4D54;
+      &-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+      }
+      .icon {
+        fill: #4F4D54;
+        height: 18px;
+        width: 18px;
+      }
+    }
+    &__body {
+      padding: 0;
+      height: calc(100% - 49px);
+    }
+  }
+}
+
+//вид с toogle и классическими чекбоксами
+.filters-form--classic {
+  .filter-block {
+    padding: 0 0 22px;
+    border-bottom: 1px solid #ECECEC;
+    &__title {
+      margin: 0;
+      position: relative;
+      cursor: pointer;
+      .clear {
+        display: none;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 16px;
+        width: 12px;
+        background-image: url("data:image/svg+xml,%3Csvg width='11' height='7' viewBox='0 0 11 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.9686 5.55657C10.9688 5.33613 10.8843 5.11569 10.7156 4.94776L6.57285 0.830321C6.23869 0.49824 5.69921 0.49824 5.36493 0.830321L1.22229 4.94776C0.886404 5.28154 0.884571 5.82477 1.21805 6.16102C1.55164 6.49727 2.09432 6.49917 2.43021 6.165L5.96895 2.64784L9.50757 6.165C9.84346 6.49917 10.3863 6.49727 10.7197 6.16102C10.8858 5.99347 10.9686 5.77492 10.9686 5.55657Z' fill='%23C5C5C5'/%3E%3C/svg%3E%0A");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transform: scale(1,-1);
+      }
+      &.active::after {
+        transform: scale(1,1);
+      }
+      &.active + .filter-block__fields {
+        display: block;
+      }
+    }
+    &__fields {
+      display: none;
+      padding-top: 20px;
+    }
+  }
+  .checkbox-item {
+    display: block;
+    margin: 0 0 15px;
+    .label {
+      display: block;
+      position: relative;
+      padding: 0 20px 0 35px;
+      border: 0;
+      background: rgba(0,0,0,0.0);
+      color: $c-text4;
+      border-radius: 0;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: -3px;
+        height: 18px;
+        width: 18px;
+        border: 1px solid #C7CCD7;
+        border-radius: 3px;
+      }
+      b {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 12px;
+        color: #878787;
+        font-weight: normal;
+      }
+    }
+    input {
+      &:checked + .label {
+        background: rgba(0,0,0,0.0);
+        color: $c-text4;
+        transition: all ease 0.4s;
+        &::before {
+          border-color: $c-primary;
+          background-image: url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.1287 1.42861L10.8179 1.11808C10.4766 0.776069 9.9174 0.776069 9.57503 1.11808L4.29682 6.39702L2.42389 4.52482C2.0826 4.18316 1.52308 4.18316 1.18179 4.52518L0.871262 4.83534C0.529973 5.17699 0.529973 5.73615 0.871262 6.07781L3.67395 8.88339C4.01561 9.22468 4.57477 9.22468 4.91642 8.88339L11.1287 2.67107C11.4697 2.32942 11.4697 1.77026 11.1287 1.42861Z' fill='%23DB332D'/%3E%3C/svg%3E%0A");
+          background-size: 10px 15px;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $md - 1) {
+  .filters-form--classic {
+    .filter-block {
+      padding: 0 0 12px;
+      &__title {
+        padding-right: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'Адрес доставки'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    +b.personal.container
+        .row
+            +e.__aside.col-lg-3
+                include components/aside
+            +e.__main.col-lg-9
+                +b.pageheader
+                    +e('h1').__title.h2 Адрес доставки
+                +e('form').__form
+                    .fieldgroup.fieldgroup--modal
+                        label.label Страна *
+                        select.js-formstyler
+                            option Россия
+                            option Беларусь
+                            option Украина
+                    .fieldgroup.fieldgroup--modal
+                        label.label Город *
+                        select.js-formstyler(
+                            data-placeholder="Введите название города или выберите из списка"
+                            data-search-placeholder="Введите название города")
+                            option
+                            option Москва
+                            option Санкт Петербург
+                            option Новосибирск
+                            option Екатеринбург
+                            option Казань
+                            option Нижний Новгород
+                            option Челябинск
+                            option Самара
+                            option Омск
+                            option Ростов-на-Дону
+                    .fieldgroup.fieldgroup--modal
+                        label.label Адрес *
+                        input.input(type="text" placeholder="Введите адрес" value="пр. Мира, д. 4, к. 1, кв. 34" required)
+                    .fieldgroup.fieldgroup--modal
+                        label.label Индекс *
+                        input.input(type="email" placeholder="Индекс" value="134243" required)
+                    .fieldgroup.fieldgroup--modal
+                        button.btn.btn--primary Сохранить адрес

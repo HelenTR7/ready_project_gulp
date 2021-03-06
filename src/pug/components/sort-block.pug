@@ -1,0 +1,19 @@
+.sort-block
+    .sort-block__sorting
+        .sort-block__icon
+            +icon('i-sort')
+        .sort-block__title.js-sort-title Сортировать по
+            .js-active
+            +icon('i-arr-b')
+        .sort-block__body.js-sort-body
+            a(href="javascript:;").sort-block__link.active Популярности
+            a(href="javascript:;").sort-block__link Новизне
+            a(href="javascript:;").sort-block__link Названию
+    .sort-block__views
+        a(href="javascript:;").js-list-view.icon-list
+            +icon('i-list')
+        a(href="javascript:;").js-grid-view.icon-grid.active
+            +icon('i-grid')
+    .sort-block__filters
+        a(href="javascript:;").js-open-filters
+            +icon('i-filters')

@@ -1,0 +1,15 @@
+mixin vendor-item(args={})
+    +b('a')(href="vendor.html" class= args.mod_class || 'vendor-item')
+        +lazy-img({
+            img: args.img,
+            placeholder: pixel,
+            img_mod: 'vendor-item__img',
+            wrap_mod: 'vendor-item__img-wrap',
+            link: false,
+            aria_label: false,
+        })
+        if(!args.notitle)
+            +e.__title=args.title
+        +e.__country
+            img(src=args.flag alt=args.country)
+            span=args.country

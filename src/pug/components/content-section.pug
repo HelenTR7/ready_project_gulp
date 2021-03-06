@@ -1,0 +1,28 @@
++b('section').content-section.content
+    .container
+        h1.h1 COMFORT-MAX – качественная техника немецких марок
+        p Компания COMFORT-MAX является официальным представительством на российском рынке техники немецких брендов AEG, BEEM, Bomann, Clatronic, ProfiCook, Rommelsbacher, Steba и голландских брендов AudioSonic, Princess, Tristar.
+        p Эта техника представлена в Европе во многих магазинах, например, MediaMarkt, Auchan, Selgros и Globus. 95% техники этих марок продается именно в Европе.
+        +e.__items
+            +e.__item
+                +lazy-img({
+                    img: './assets/imgs/germany.svg',
+                    placeholder: pixel,
+                    img_mod: 'content-section__img',
+                    wrap_mod: 'content-section__img-wrap',
+                    link: false,
+                    aria_label: false,
+                })
+                +e.__text 100% немецкое качество
+            +e.__item
+                +lazy-img({
+                    img: './assets/imgs/guarantee.svg',
+                    placeholder: pixel,
+                    img_mod: 'content-section__img',
+                    wrap_mod: 'content-section__img-wrap',
+                    link: false,
+                    aria_label: false,
+                })
+                +e.__text 100% гарантия
+
+

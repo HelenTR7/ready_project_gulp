@@ -1,0 +1,108 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'Корзина'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    +b('section').pageheader
+        .container
+            +e('h1').__title.h1 Корзина
+    +b.cart.container
+        .row
+            .col-lg-9
+                +e.__list
+                    mixin cart-item(args={})
+                        +b(class= args.mod_class || 'cart-item')
+                            +e.__top
+                                +e.__img
+                                    img(src="./assets/imgs/product1.png" alt="img")
+                                +e.__title=args.title
+                            +e.__bottom
+                                +e.__counter
+                                    +counter({
+                                        mod_class: 'counter--sm',
+                                        value: 12,
+                                        min_value: 1,
+                                        max_value: 15,
+                                        unit: '',
+                                    })
+                                    if(args.count)
+                                        .text 24 890 Р / 1 шт
+                                +e.__price 24 890 Р
+                                +e.__action.js-cart-item-action
+                                    span.remove
+                                        +icon('i-delete')
+                                    span.return
+                                        +icon('i-more')
+                    +cart-item({
+                        mod_class: 'cart-item--disabled',
+                        title: 'Кофеварка CASO Coffee Compact',
+                    })
+                    +cart-item({
+                        title: 'Кофемашина CASO Café Crema One',
+                        count: true,
+                    })
+                    +cart-item({
+                        title: 'Кофемашина Rommelsbacher EKS 2010'
+                    })
+                +b.promo.cart__promo
+                    +e.__title У вас есть промокод?
+                    +e.__fields.fieldgroup
+                        input.input(type="text" placeholder="Введите промокод")
+                        button.btn.btn--bordered Применить
+                +e.__delivery
+                    +e.__del-title Расчитать доставку
+                    .row
+                        .col-md-6
+                            .fieldgroup
+                                label.label Страна *
+                                select.js-formstyler
+                                    option Россия
+                                    option Беларусь
+                                    option Украина
+                            .fieldgroup
+                                label.label Город *
+                                select.js-formstyler(data-search-placeholder="Введите название города")
+                                    option Москва
+                                    option Санкт Петербург
+                                    option Новосибирск
+                                    option Екатеринбург
+                                    option Казань
+                                    option Нижний Новгород
+                                    option Челябинск
+                                    option Самара
+                                    option Омск
+                                    option Ростов-на-Дону
+                        .col-md-6
+                            .fieldgroup.fieldgroup--mt
+                                label.radio-item
+                                    input(type="radio" name="delivery" checked)
+                                    span.label
+                                        span.text Самовывоз из нашего магазина
+                                        span.text2 г. Люберцы, РП Томилино, 23-й км Новорязанского ш., д. 21. Бесплатно, сегодня
+                            .fieldgroup
+                                label.radio-item
+                                    input(type="radio" name="delivery")
+                                    span.label
+                                        span.text Доставка курьером по Москве
+                                        span.text2 <b>300 Р</b>, завтра
+
+
+            +e.__info.sticky-info-wrap.js-sticky-wrap.col-lg-3
+                +b.sticky-info.js-sticky
+                    +e.__content
+                        dl
+                            dd 3 товара на сумму:
+                            dt 100 000 Р
+                        dl
+                            dd Доставка:
+                            dt Курьер по Москве, 300 Р
+                        dl
+                            dd Итого:
+                            dt <b>100 300 Р</b>
+                    +e.__btn
+                        a(href="order.html").btn.btn--primary.btn--full Оформить заказ
+
+

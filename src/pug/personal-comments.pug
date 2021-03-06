@@ -1,0 +1,22 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'Мои отзывы'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    +b.personal.container
+        .row
+            +e.__aside.col-lg-3
+                include components/aside
+            +e.__main.col-lg-9
+                +b.pageheader
+                    +e('h1').__title.h2 Мои отзывы
+                include components/comment-item
+                +comment-item({
+                    withProduct:true,
+                })
+                +comment-item({
+                    withProduct: true,
+                })

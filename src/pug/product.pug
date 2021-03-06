@@ -1,0 +1,95 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'Товар'
+    - var pageBodyClass = 'product-page'
+    - var pageHeaderClass = ''
+
+block content
+    include components/breadcrumb
+    +breadcrumb({
+        content1: 'Каталог',
+        href_content1: 'catalog-start.html',
+        content2: 'Приготовление напитков',
+        href_content2: 'catalog.html',
+        content3: 'Кофемашины',
+    })
+    +b('section').pageheader
+        .container
+            +e('h1').__title.h1 Кофемашина-кофеварка Rommelsbacher EKS 3010
+            +e.__product-top
+                +b.rating
+                    +e.__stars(data-stars="4")
+                        span.star
+                        span.star
+                        span.star
+                        span.star
+                        span.star
+                    +e.__count 3 отзыва
+                a(href="").btn-share
+                    +icon('i-share')
+                    span Поделиться
+    +b('section').product.container
+        .row
+            +e.__fc.col-md-12.col-lg-6
+                include components/product-connected-sl
+            +e.__main.col-md-6.col-lg-3
+                +e.__list-title Характеристики
+                +e.__vendor
+                    img(src="./assets/imgs/rommelsbacher.svg" alt="rommelsbacher")
+                +e.__list
+                    p Корпус из нержавеющей стали
+                    p Термоблок — литой алюминий
+                    p Давление — 19 бар, помпа ULKA (Италия)
+                    p Предварительное смачивание кофе
+                    p Резервуар для воды — 1,5 (съемный)
+                    p Электронный контроль уровня воды
+                +e('a').__list-more(href="") Все характеристики
+            +e.__lc.col-md-6.col-lg-3
+                +e('form').__form
+                    +e.__prices
+                        +e.__price-current 54 990 Р
+                        +e.__price-old 56 000 Р
+                    +e.__row
+                        +e.__stock.in-stock В наличии
+                        +e.__counter
+                            +counter({
+                                value: 12,
+                                min_value: 1,
+                                max_value: 15,
+                                unit: '',
+                            })
+                    +e.__buy
+                        a(href="").btn.btn--primary.btn--full В корзину
+                    +e.__one-click
+                        a.btn.btn--bordered.btn--full(
+                            href="javascript:;"
+                            data-target="#modal-one-click"
+                            data-toggle="modal"
+                        ) Купить в 1 клик
+                    +e.__form-delivery
+                        +icon('i-truck')
+                        .text
+                            p Доставим на дом завтра, 300 р
+                            a(href="") Подробнее о доставке
+    include components/products-slider
+    +products-slider({
+        mod_class: 'products-slider--sm-title',
+        title: 'Сопутствующие товары',
+        products_mod_class: 'product-item--small',
+        withoutRating: true,
+    })
+    include components/product-tabs
+    include components/products-slider
+    +products-slider-sm({
+        mod_class: 'products-slider--sm-title',
+        title: 'Похожие товары'
+    })
+
+
+
+
+
+
+
+

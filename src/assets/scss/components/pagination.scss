@@ -1,0 +1,76 @@
+@import "../main/parameters";
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 80px;
+  .dots {
+    margin: 0 5px;
+    display: block;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #E9E9E9;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  a {
+    margin: 0 5px;
+    display: block;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #E9E9E9;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 14px;
+    &:hover {
+      background: $c-primary;
+      border-color: $c-primary;
+      color: #fff;
+    }
+  }
+  .prev,
+  .next {
+    .icon {
+      height: 11px;
+      width: 9px;
+      fill: $c-text4;
+    }
+    &:hover {
+      .icon {
+        fill: #fff;
+      }
+    }
+    &.disabled {
+      pointer-events: none;
+      .icon {
+        fill: #E9E9E9;
+      }
+      &:hover {
+        background: rgba(0,0,0,0.0);
+        .icon {
+          fill: #E9E9E9;
+        }
+      }
+    }
+  }
+  .current {
+    margin: 0 5px;
+    display: block;
+    width: 42px;
+    height: 42px;
+    border: 1px solid $c-primary;
+    background: $c-primary;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 14px;
+  }
+}

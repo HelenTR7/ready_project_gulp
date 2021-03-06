@@ -1,0 +1,267 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'Брендзона'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    include components/breadcrumb
+    +breadcrumb({
+        content1: 'Брендзона'
+    })
+    +b('section').pageheader
+        .container
+            +e('h1').__title.h1 Caso
+    +b('section').vendor.container
+        +e.__img(style="background-image:url('./assets/imgs/caso.jpg');")
+            include ./components/vendor-item
+            +vendor-item({
+                mod_class: 'vendor-item--single',
+                img: './assets/imgs/vendors/caso.svg',
+                notitle: true,
+                flag: './assets/imgs/countries/germany.svg',
+                country: 'Германия, с 1952 г.',
+            })
+        +e.__content
+            .h3 О компании
+            p Компания Braukmann GmbH (марки CASO, Ellrona) – семейный бизнес в 2-х поколениях.<br>Основана в 1952 г. и долгие годы работала как дистрибьютор нескольких известных европейских марок.
+            p Марка CASO была выбрана МАРКОЙ ГОДА в Германии по мнению читателей журнала «Elektroboerse Handel» CASO получила 1 приз в категории «Кухонные помощники». Особенно покупателей удивили микроволновые печи, вакуумные упаковщики и винные холодильники. На фото Peter Braukmann с братом Bernd Braukmann и наградой.
+            +e.__btn
+                a(href="www.caso-germany.com" target="_blank").btn.btn--bordered Подробнее о компании
+        +e.__categories
+            .swiper.js-slider-ven-cat-mob
+                .swiper-container
+                    .swiper-wrapper.row
+                        mixin vendor-cat-item(args={})
+                            +b('a').vendor-cat-item(href="/")
+                                +e.__img-wrap
+                                    +e('img').__img(src=args.img)
+                                +e.__title=args.title
+                        include data/vendorCategoriesList
+                        each list in vendorCategoriesList
+                            .vendor-cat-item-wrap.swiper-slide.col-md-4.col-lg-3
+                                +vendor-cat-item(list)
+        +e.__row.row
+            +b('aside').aside.aside--vendors.col-md-4.col-lg-3
+                +e.__block
+                    +e.__title.js-toggle-title
+                        span Приготовление напитков
+                    +e('ul').__list.js-toggle-body
+                        li
+                            a(href="") Диспенсеры воды
+                        li
+                            a(href="") Кофемашины и кофеварки
+                        li
+                            a(href="") Льдогенератор
+                        li
+                            a(href="") Пеновзбиватели
+                        li
+                            a(href="") Соковыжималки
+                        li
+                            a(href="") Чайники
+                +e.__block
+                    +e.__title.js-toggle-title
+                        span Прочая техника
+                    +e('ul').__list.js-toggle-body
+                        li
+                            a(href="") Блинница, тостеры
+                        li
+                            a(href="") Фритюрницы, грили
+                        li
+                            a(href="") Кухонный комбайн
+                        li
+                            a(href="") Кофе
+                        li
+                            a(href="") Мясорубка
+                        li
+                            a(href="") Открывалка
+                        li
+                            a(href="") Яйцеварки
+                +e.__block
+                    +e.__title.js-toggle-title
+                        span Винные шкафы
+                    +e('ul').__list.js-toggle-body
+                        li
+                            a(href="") Серия WineComfort Smart
+                        li
+                            a(href="") Серия WineComfort
+                        li
+                            a(href="") Серия WineChef
+                        li
+                            a(href="") Серия WineSafe
+                        li
+                            a(href="") Серия WineDuett
+                        li
+                            a(href="") Серия WineCase
+                +e.__block
+                    +e.__title.js-toggle-title
+                        span Аксессуары
+                    +e('ul').__list.js-toggle-body
+                        li
+                            a(href="") Аксессуары
+                        li
+                            a(href="") Пакеты вакуумные
+                        li
+                            a(href="") Рулоны вакуумные
+                        li
+                            a(href="") Пакеты ZIP
+            +e.__popular.col-md-8.col-lg-9
+                +e.__popular-title.h1 Популярные товары
+                +e.__popular-body
+                    .swiper.js-slider-ven-pop-mob
+                        .swiper-container
+                            .swiper-wrapper.row
+                                include components/product-item
+                                .swiper-slide.col-md-6.col-lg-3
+                                    +product-item({
+                                        mod_class: 'product-item--vendor',
+                                        inSlider: false,
+                                        img: './assets/imgs/product1.png',
+                                        title: 'Блендер',
+                                        vendor_title: 'CASO HB 1000',
+                                        list: false,
+                                        price: '59 900 руб',
+                                        review_stars: 3,
+                                        review_count: '5 отзывов',
+                                    })
+                                .swiper-slide.col-md-6.col-lg-3
+                                    +product-item({
+                                        mod_class: 'product-item--vendor',
+                                        inSlider: false,
+                                        img: './assets/imgs/product1.png',
+                                        title: 'Винный холодильник',
+                                        vendor_title: 'CASO WineComfort 380',
+                                        list: false,
+                                        price: '59 900 руб',
+                                        review_stars: 3,
+                                        review_count: '5 отзывов',
+                                    })
+                                .swiper-slide.col-md-6.col-lg-3
+                                    +product-item({
+                                        mod_class: 'product-item--vendor',
+                                        inSlider: false,
+                                        img: './assets/imgs/product1.png',
+                                        title: 'Вакууматор',
+                                        vendor_title: 'CASO VR 190 advanced',
+                                        list: false,
+                                        price: '59 900 руб',
+                                        review_stars: 3,
+                                        review_count: '5 отзывов',
+                                    })
+                                .swiper-slide.col-md-6.col-lg-3
+                                    +product-item({
+                                        mod_class: 'product-item--vendor',
+                                        inSlider: false,
+                                        img: './assets/imgs/product1.png',
+                                        title: 'Блендер',
+                                        vendor_title: 'CASO HB 1000',
+                                        list: false,
+                                        price: '59 900 руб',
+                                        review_stars: 3,
+                                        review_count: '5 отзывов',
+                                    })
+                                .swiper-slide.col-md-6.col-lg-3
+                                    +product-item({
+                                        mod_class: 'product-item--vendor',
+                                        inSlider: false,
+                                        img: './assets/imgs/product1.png',
+                                        title: 'Весы кухонные',
+                                        vendor_title: 'CASO L 20',
+                                        list: false,
+                                        price: '59 900 руб',
+                                        review_stars: 3,
+                                        review_count: '5 отзывов',
+                                    })
+                                .swiper-slide.col-md-6.col-lg-3
+                                    +product-item({
+                                        mod_class: 'product-item--vendor',
+                                        inSlider: false,
+                                        img: './assets/imgs/product1.png',
+                                        title: 'Соковыжималка',
+                                        vendor_title: 'CASO CP 300',
+                                        list: false,
+                                        price: '59 900 руб',
+                                        review_stars: 3,
+                                        review_count: '5 отзывов',
+                                    })
+                                .swiper-slide.col-md-6.col-lg-3
+                                    +product-item({
+                                        mod_class: 'product-item--vendor',
+                                        inSlider: false,
+                                        img: './assets/imgs/product1.png',
+                                        title: 'Чайник',
+                                        vendor_title: 'CASO Coffee Classic Kettle',
+                                        list: false,
+                                        price: '59 900 руб',
+                                        review_stars: 3,
+                                        review_count: '5 отзывов',
+                                    })
+                                .swiper-slide.col-md-6.col-lg-3
+                                    +product-item({
+                                        mod_class: 'product-item--vendor',
+                                        inSlider: false,
+                                        img: './assets/imgs/product1.png',
+                                        title: 'Весы кухонные',
+                                        vendor_title: 'CASO L 20',
+                                        list: false,
+                                        price: '59 900 руб',
+                                        review_stars: 3,
+                                        review_count: '5 отзывов',
+                                    })
+
+                                .swiper-slide.col-md-6.col-lg-3
+                                    +product-item({
+                                        mod_class: 'product-item--vendor',
+                                        inSlider: false,
+                                        img: './assets/imgs/product1.png',
+                                        title: 'Диспенсер горячей воды',
+                                        vendor_title: 'CASO HW 500 Touch',
+                                        list: false,
+                                        price: '59 900 руб',
+                                        review_stars: 3,
+                                        review_count: '5 отзывов',
+                                    })
+                                .swiper-slide.col-md-6.col-lg-3
+                                    +product-item({
+                                        mod_class: 'product-item--vendor',
+                                        inSlider: false,
+                                        img: './assets/imgs/product1.png',
+                                        title: 'Винный холодильник',
+                                        vendor_title: 'WineSafe 18 EB inox',
+                                        list: false,
+                                        price: '59 900 руб',
+                                        review_stars: 3,
+                                        review_count: '5 отзывов',
+                                    })
+                                .swiper-slide.col-md-6.col-lg-3
+                                    +product-item({
+                                        mod_class: 'product-item--vendor',
+                                        inSlider: false,
+                                        img: './assets/imgs/product1.png',
+                                        title: 'Печь конвекционная',
+                                        vendor_title: 'CASO Steam Chef',
+                                        list: false,
+                                        price: '59 900 руб',
+                                        review_stars: 3,
+                                        review_count: '5 отзывов',
+                                    })
+                                .swiper-slide.col-md-6.col-lg-3
+                                    +product-item({
+                                        mod_class: 'product-item--vendor',
+                                        inSlider: false,
+                                        img: './assets/imgs/product1.png',
+                                        title: 'Диспенсер горячей воды',
+                                        vendor_title: 'CASO HW 500 Touch',
+                                        list: false,
+                                        price: '59 900 руб',
+                                        review_stars: 3,
+                                        review_count: '5 отзывов',
+                                    })
+                        .btn-more-wrap
+                            a(href="catalog.html").btn.btn-more.loading
+                                //+icon('i-more')
+                                span.text Показать все товары
+
+
+

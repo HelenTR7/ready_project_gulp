@@ -1,0 +1,12 @@
+mixin category-item-sm(args={})
+    +b('a').category-item-sm(href="/")
+        +lazy-img({
+            img: args.img,
+            placeholder: pixel,
+            img_mod: 'category-item-sm__img',
+            wrap_mod: 'category-item-sm__img-wrap',
+            link: false,
+            aria_label: false,
+        })
+        +e.__inner
+            +e.__title=args.title

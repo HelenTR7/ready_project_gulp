@@ -1,0 +1,110 @@
+@import "../main/parameters";
+
+.product-comments {
+  &__list {
+    @media(min-width: $lg) {
+      max-width: 69.5%;
+      flex: 0 0 69.5%;
+    }
+  }
+  &__right {
+    @media(min-width: $lg) {
+      max-width: 30.5%;
+      flex: 0 0 30.5%;
+      padding-left: 55px;
+      padding-top: 10px;
+    }
+  }
+  &__btn {
+    margin: 0 0 25px;
+    .btn {
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
+  &__rating-block {
+    background: #F2F2F2;
+    border-radius: 5px;
+    padding: 15px 25px 23px;
+    margin: 0 0 21px;
+  }
+  &__rating-top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 0 8px;
+    b {
+      font-weight: 600;
+      font-size: 30px;
+      color: $c-text4;
+    }
+    span {
+      font-size: 14px;
+      color: #545454;
+      padding-left: 15px;
+    }
+  }
+  &__rating {}
+
+  &__rating-list {}
+}
+
+.r-line {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 0 0 15px;
+  &__star {
+    display: block;
+    width: 18px;
+    max-width: 18px;
+    flex: 0 0 18px;
+    height: 17px;
+    background: url("../imgs/star-active.svg") center no-repeat;
+    background-size: contain;
+    margin: 0 3px 0 0;
+  }
+  &__mark {
+    font-weight: 500;
+    font-size: 15px;
+    color: $c-text4;
+    max-width: 28px;
+    flex: 0 0 28px;
+    padding-left: 5px;
+  }
+  &__line {
+    position: relative;
+    background: #D6D6D6;
+    border-radius: 6px;
+    height: 3px;
+    flex: 1;
+  }
+  &__line-active {
+    background: $c-primary;
+    height: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &__count {
+    font-weight: 500;
+    font-size: 15px;
+    color: $c-text4;
+    max-width: 23px;
+    flex: 0 0 23px;
+    text-align: right;
+  }
+}
+
+@media (max-width: $sm - 1) {
+  .product-comments {
+    &__list {
+      order: 2;
+    }
+    &__right {
+      order: 1;
+      margin-bottom: 15px;
+    }
+  }
+}

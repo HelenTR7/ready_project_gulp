@@ -1,0 +1,36 @@
+@import "../main/parameters";
+
+.active-filters-block {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 27px;
+  &__item {
+    border: 1px solid #E2E2E2;
+    border-radius: 3px;
+    color: #74707C;
+    font-weight: 500;
+    font-size: 13px;
+    padding: 9px 15px;
+    margin: 0 15px 10px 0;
+  }
+  .remove {
+    cursor: pointer;
+    &:hover {
+      .icon {
+        fill: $c-primary;
+      }
+    }
+  }
+  .icon {
+    margin-left: 10px;
+    height: 10px;
+    width: 10px;
+    fill: #B0B0B0;
+  }
+}
+
+@media (max-width: $sm) {
+  .active-filters-block {
+    display: none;
+  }
+}

@@ -1,0 +1,33 @@
++b('section').banners-slider
+    .container
+        +e.__swiper.swiper.js-swiper-banner
+            .swiper-container
+                .swiper-wrapper
+                    +e('a').__slide.swiper-slide(href="")
+                        //-+e('img').__img.swiper-lazy(
+                            data-srcset="./assets/imgs/banner1-sm.jpg 1x, ./assets/imgs/banner1-lg.jpg 2x"
+                            sizes="(max-width: 1023px) 1x, 2x"
+                            data-src="./assets/imgs/banner1-sm.jpg"
+                            alt="banner")
+                        +e('picture')
+                            source(srcset="./assets/imgs/banner1-lg.jpg" media="(min-width: 768px)")
+                            source(srcset="./assets/imgs/banner1-sm.jpg" media="(min-width: 250px)")
+                            +e('img').__img(src="./assets/imgs/banner1-lg.jpg" alt="banner")
+                        +e.__content
+                            +e.__text Смузи одним <br>касанием
+                            +e.__title Блендеры Caso
+                    +e('a').__slide.swiper-slide(href="")
+                        //-+e('img').__img.swiper-lazy(
+                            data-srcset="./assets/imgs/banner2-sm.jpg 1x, ./assets/imgs/banner2-lg.jpg 2x"
+                            sizes="(max-width: 1023px) 1x, 2x"
+                            data-src="./assets/imgs/banner2-sm.jpg"
+                            alt="banner")
+                        +e('picture')
+                            source(srcset="./assets/imgs/banner2-lg.jpg" media="(min-width: 768px)")
+                            source(srcset="./assets/imgs/banner2-sm.jpg" media="(min-width: 250px)")
+                            +e('img').__img(src="./assets/imgs/banner2-lg.jpg" alt="banner")
+                        +e.__content
+                            +e.__text Смузи одним <br>касанием
+                            +e.__title Блендеры Caso
+            .swiper-button-prev
+            .swiper-button-next

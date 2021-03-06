@@ -1,0 +1,34 @@
+@import "../main/parameters";
+
+.pageheader {
+  padding: 0 0 32px;
+  &__title {}
+  &__product-top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 5px 0 0;
+    .rating__count {
+      font-weight: 500;
+      font-size: 14px;
+    }
+    .btn-share {
+      margin-left: 40px;
+    }
+  }
+}
+
+@media (max-width: $sm - 1) {
+  .pageheader {
+    padding: 0 0 19px;
+    &__title {
+      font-size: 18px!important;
+      line-height: 24px!important;
+    }
+    &__product-top {
+      .rating__count {
+        font-size: 13px;
+      }
+    }
+  }
+}

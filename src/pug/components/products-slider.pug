@@ -1,0 +1,213 @@
+include product-item
+
+mixin products-slider(args={})
+    +b('section')(class=args.mod_class || 'products-slider')
+        .container
+            +e.__title.section-title=args.title
+            +e.__swiper.swiper.js-swiper-products
+                .swiper-container
+                    .swiper-wrapper
+                        +e.__slide.swiper-slide
+                            +product-item({
+                                mod_class: args.products_mod_class,
+                                inSlider: true,
+                                img: './assets/imgs/product1.png',
+                                title: 'Хлебопечка CLATRONIC BBA 3365',
+                                price: '59 900 руб',
+                                withoutRating: args.withoutRating,
+                                review_stars: 3,
+                                review_count: '5 отзывов',
+                            })
+                        +e.__slide.swiper-slide
+                            +product-item({
+                                mod_class: args.products_mod_class,
+                                inSlider: true,
+                                img: './assets/imgs/product2.png',
+                                title: 'Винный холодильник CASO WineComfort 380',
+                                price: '59 900 руб',
+                                withoutRating: args.withoutRating,
+                                review_stars: 2,
+                                review_count: '15 отзывов',
+                            })
+                        +e.__slide.swiper-slide
+                            +product-item({
+                                mod_class: args.products_mod_class,
+                                inSlider: true,
+                                img: './assets/imgs/product3.png',
+                                title: 'Кофемашина-кофеварка Rommelsbacher EKS 3010',
+                                price: '59 900 руб',
+                                withoutRating: args.withoutRating,
+                                review_stars: 0,
+                                review_count: '0 отзывов',
+                            })
+                        +e.__slide.swiper-slide
+                            +product-item({
+                                mod_class: args.products_mod_class,
+                                inSlider: true,
+                                img: './assets/imgs/product4.png',
+                                title: 'Диспенсер воды Emerio WD-118981',
+                                price: '59 900 руб',
+                                withoutRating: args.withoutRating,
+                                review_stars: 3,
+                                review_count: '5 отзывов',
+                            })
+                        +e.__slide.swiper-slide
+                            +product-item({
+                                mod_class: args.products_mod_class,
+                                inSlider: true,
+                                img: './assets/imgs/product1.png',
+                                title: 'Хлебопечка CLATRONIC BBA 3365',
+                                price: '59 900 руб',
+                                review_stars: 3,
+                                withoutRating: args.withoutRating,
+                                review_count: '5 отзывов',
+                            })
+                        +e.__slide.swiper-slide
+                            +product-item({
+                                mod_class: args.products_mod_class,
+                                inSlider: true,
+                                img: './assets/imgs/product2.png',
+                                title: 'Винный холодильник CASO WineComfort 380',
+                                price: '59 900 руб',
+                                review_stars: 2,
+                                withoutRating: args.withoutRating,
+                                review_count: '15 отзывов',
+                            })
+                        +e.__slide.swiper-slide
+                            +product-item({
+                                mod_class: args.products_mod_class,
+                                inSlider: true,
+                                img: './assets/imgs/product3.png',
+                                title: 'Кофемашина-кофеварка Rommelsbacher EKS 3010',
+                                price: '59 900 руб',
+                                review_stars: 0,
+                                withoutRating: args.withoutRating,
+                                review_count: '0 отзывов',
+                            })
+                        +e.__slide.swiper-slide
+                            +product-item({
+                                mod_class: args.products_mod_class,
+                                inSlider: true,
+                                img: './assets/imgs/product4.png',
+                                title: 'Диспенсер воды Emerio WD-118981',
+                                price: '59 900 руб',
+                                review_stars: 3,
+                                withoutRating: args.withoutRating,
+                                review_count: '5 отзывов',
+                            })
+                .swiper-button-prev.swiper-button-prev--tr
+                .swiper-button-next.swiper-button-next--tr
+
+mixin products-slider-sm(args={})
+    +b('section')(class=args.mod_class || 'products-slider')
+        .container
+            +e.__title.section-title=args.title
+            +e.__swiper.swiper.js-swiper-products-sm
+                .swiper-container
+                    .swiper-wrapper
+                        +e.__slide.swiper-slide
+                            +product-item({
+                                mod_class: args.products_mod_class,
+                                inSlider: true,
+                                img: './assets/imgs/product1.png',
+                                title: 'Хлебопечка CLATRONIC BBA 3365',
+                                price: '59 900 руб',
+                                withoutRating: args.withoutRating,
+                                review_stars: 3,
+                                review_count: '5 отзывов',
+                                badges: args.badges,
+                                badges_list: ['Обзор']
+                            })
+                        +e.__slide.swiper-slide
+                            +product-item({
+                                mod_class: args.products_mod_class,
+                                inSlider: true,
+                                img: './assets/imgs/product2.png',
+                                title: 'Винный холодильник CASO WineComfort 380',
+                                price: '59 900 руб',
+                                withoutRating: args.withoutRating,
+                                review_stars: 2,
+                                review_count: '15 отзывов',
+                                badges: args.badges,
+                                badges_list: ['Обзор']
+                            })
+                        +e.__slide.swiper-slide
+                            +product-item({
+                                mod_class: args.products_mod_class,
+                                inSlider: true,
+                                img: './assets/imgs/product3.png',
+                                title: 'Кофемашина-кофеварка Rommelsbacher EKS 3010',
+                                price: '59 900 руб',
+                                withoutRating: args.withoutRating,
+                                review_stars: 0,
+                                review_count: '0 отзывов',
+                                badges: args.badges,
+                                badges_list: ['Обзор']
+                            })
+                        +e.__slide.swiper-slide
+                            +product-item({
+                                mod_class: args.products_mod_class,
+                                inSlider: true,
+                                img: './assets/imgs/product4.png',
+                                title: 'Диспенсер воды Emerio WD-118981',
+                                price: '59 900 руб',
+                                withoutRating: args.withoutRating,
+                                review_stars: 3,
+                                review_count: '5 отзывов',
+                                badges: args.badges,
+                                badges_list: ['Обзор']
+                            })
+                        +e.__slide.swiper-slide
+                            +product-item({
+                                mod_class: args.products_mod_class,
+                                inSlider: true,
+                                img: './assets/imgs/product1.png',
+                                title: 'Хлебопечка CLATRONIC BBA 3365',
+                                price: '59 900 руб',
+                                review_stars: 3,
+                                withoutRating: args.withoutRating,
+                                review_count: '5 отзывов',
+                                badges: args.badges,
+                                badges_list: ['Обзор']
+                            })
+                        +e.__slide.swiper-slide
+                            +product-item({
+                                mod_class: args.products_mod_class,
+                                inSlider: true,
+                                img: './assets/imgs/product2.png',
+                                title: 'Винный холодильник CASO WineComfort 380',
+                                price: '59 900 руб',
+                                review_stars: 2,
+                                withoutRating: args.withoutRating,
+                                review_count: '15 отзывов',
+                                badges: args.badges,
+                                badges_list: ['Обзор']
+                            })
+                        +e.__slide.swiper-slide
+                            +product-item({
+                                mod_class: args.products_mod_class,
+                                inSlider: true,
+                                img: './assets/imgs/product3.png',
+                                title: 'Кофемашина-кофеварка Rommelsbacher EKS 3010',
+                                price: '59 900 руб',
+                                review_stars: 0,
+                                withoutRating: args.withoutRating,
+                                review_count: '0 отзывов',
+                                badges: args.badges,
+                                badges_list: ['Обзор']
+                            })
+                        +e.__slide.swiper-slide
+                            +product-item({
+                                mod_class: args.products_mod_class,
+                                inSlider: true,
+                                img: './assets/imgs/product4.png',
+                                title: 'Диспенсер воды Emerio WD-118981',
+                                price: '59 900 руб',
+                                review_stars: 3,
+                                withoutRating: args.withoutRating,
+                                review_count: '5 отзывов',
+                                badges: args.badges,
+                                badges_list: ['Обзор']
+                            })
+                .swiper-button-prev.swiper-button-prev--tr
+                .swiper-button-next.swiper-button-next--tr

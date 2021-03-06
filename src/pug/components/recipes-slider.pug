@@ -1,0 +1,61 @@
+include recipe-item
+
+mixin recipes-slider()
+    +b.recipes-slider.swiper.js-swiper-recipes
+        .swiper-container
+            .swiper-wrapper
+                +e.__slide.swiper-slide
+                    +recipe-item({
+                        img: './assets/imgs/recipe1.jpg',
+                        title: 'Кофе по-ирландски Rommelsbacher EKS 3010',
+                    })
+                +e.__slide.swiper-slide
+                    +recipe-item({
+                        img: './assets/imgs/recipe2.jpg',
+                        title: 'Кофейный молочный коктейль Rommelsbacher EKS 3010',
+                    })
+                +e.__slide.swiper-slide
+                    +recipe-item({
+                        img: './assets/imgs/recipe1.jpg',
+                        title: 'Кофе по-ирландски Rommelsbacher EKS 3010',
+                    })
+                +e.__slide.swiper-slide
+                    +recipe-item({
+                        img: './assets/imgs/recipe2.jpg',
+                        title: 'Кофейный молочный коктейль Rommelsbacher EKS 3010',
+                    })
+
+        //-.swiper-button-prev.swiper-button-prev--tr
+        //-.swiper-button-next.swiper-button-next--tr
+
+mixin recipes-sm-slider(args={})
+    +b.recipes-sm-slider.swiper.js-swiper-recipes-sm
+        .swiper-container
+            .swiper-wrapper
+                +e.__slide.swiper-slide
+                    +recipe-item-sm({
+                        img: './assets/imgs/r9.jpg',
+                        title: 'Блинчики с мясом и сыром',
+                        text: 'Tortilla Chef Princess 118000',
+                    })
+                +e.__slide.swiper-slide
+                    +recipe-item-sm({
+                        img: './assets/imgs/r10.jpg',
+                        title: 'Ореховое печенье',
+                        text: 'CASO Coffee & Kitchen Flavour',
+                    })
+                +e.__slide.swiper-slide
+                    +recipe-item-sm({
+                        img: './assets/imgs/r11.jpg',
+                        title: 'Многосоставные сендвичи',
+                        text: 'Гриль Steba 4.4',
+                    })
+                +e.__slide.swiper-slide
+                    +recipe-item-sm({
+                        img: './assets/imgs/r12.jpg',
+                        title: 'Цитрусовый микс',
+                        text: 'Соковыжималка CASO CP 300',
+                    })
+
+        //-.swiper-button-prev.swiper-button-prev--tr
+        //-.swiper-button-next.swiper-button-next--tr

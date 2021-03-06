@@ -1,0 +1,189 @@
++b('header').header
+    +e.__top-line
+        .container
+            +e.__top-line-inner
+                +b('nav').nav.nav--top.header__top-line-nav
+                    +e('ul').__list
+                        +e('li').__item.active
+                            +e('a').__link(href="/" aria-label="") Бренды
+                        +e('li').__item
+                            +e('a').__link(href="/" aria-label="") Доставка
+                        +e('li').__item.has-submenu
+                            +e('a').__link(href="/" aria-label="") Покупателям
+                            +e.__toggle
+                            +e('ul').__lvl2-list
+                                +e('li').__lvl2-item
+                                    +e('a').__lvl2-link(href="/" aria-label="") Сервис
+                                +e('li').__lvl2-item.active
+                                    +e('a').__lvl2-link(href="/" aria-label="") Гарантия
+                                +e('li').__lvl2-item
+                                    +e('a').__lvl2-link(href="/" aria-label="") Сервисные центры
+                                +e('li').__lvl2-item
+                                    +e('a').__lvl2-link(href="/" aria-label="") Обмен
+                                +e('li').__lvl2-item
+                                    +e('a').__lvl2-link(href="/" aria-label="") Как купить
+                        +e('li').__item.has-submenu
+                            +e('a').__link(href="/" aria-label="") О компании
+                            +e.__toggle
+                            +e('ul').__lvl2-list
+                                +e('li').__lvl2-item
+                                    +e('a').__lvl2-link(href="/" aria-label="") Второй уровень 1
+                                +e('li').__lvl2-item
+                                    +e('a').__lvl2-link(href="/" aria-label="") Второй уровень 2
+                                +e('li').__lvl2-item
+                                    +e('a').__lvl2-link(href="/" aria-label="") Второй уровень 3
+                                +e('li').__lvl2-item
+                                    +e('a').__lvl2-link(href="/" aria-label="") Второй уровень 4
+                        +e('li').__item
+                            +e('a').__link(href="/" aria-label="") Контакты
+                +e.__top-item пн-вс 09:00 - 19:00
+                +e('a').__top-item(href="tel:+74952231577") +7 (495) 223-15-77
+                +e.__top-item
+                    a(
+                        href="javascript:;"
+                        data-target="#modal-feedback"
+                        data-toggle="modal"
+                    ).btn.btn--gray.btn--small Заказать звонок
+    +e.__fix-line
+        +e.__middle-line
+            .container
+                +e.__middle-line-inner
+                    a(href="javascript:;").mobile-burger.js-mobile-burger
+                        +icon('i-menu').open
+                        +icon('i-close').close
+
+                    if(pageBodyClass)
+                        +e('span').__logo
+                            picture
+                                source(srcset="./assets/imgs/logo.svg" media="(min-width: 1024px)")
+                                img(src="./assets/imgs/logo-sm.svg" alt="Comfort")
+                    else
+                        +e('a').__logo(href="index.html")
+                            picture
+                                source(srcset="./assets/imgs/logo.svg" media="(min-width: 1024px)")
+                                img(src="./assets/imgs/logo-sm.svg" alt="Comfort")
+                    +b('form').search.header__search
+                        +e('a').__toggle.js-search-toggle(href="javascript:;")
+                            +icon('i-glass')
+                        +e.__head
+                            +e('input').__field(type="text" placeholder="Поиск")
+                            +e('button').__btn
+                                +icon('i-glass')
+                    if(pageBodyClass)
+                        //неавторизованный
+                        +b('a').header-user(
+                            href="javascript:;"
+                            data-target="#modal-auth"
+                            data-toggle="modal"
+                            )
+                            +e.__head
+                                +icon('i-user')
+                                +e.__head-text Войти
+                    else
+                        //авторизованный
+                        +b('span').header-user
+                            +e.__head
+                                +icon('i-user').open
+                                +icon('i-close').close
+                                +e.__head-text Личный кабинет
+                            +e.__body
+                                +e('ul').__list
+                                    +e.__item
+                                        +e('a').__link(href="/" aria-label="")
+                                            +icon('i-orders')
+                                            +e.__text История заказов
+                                    +e.__item.active
+                                        +e('a').__link(href="/" aria-label="")
+                                            +icon('i-user2')
+                                            +e.__text Личные данные
+                                    +e.__item
+                                        +e('a').__link(href="/" aria-label="")
+                                            +icon('i-house')
+                                            +e.__text Адресная книга
+                                    +e.__item
+                                        +e('a').__link(href="/" aria-label="")
+                                            +icon('i-review')
+                                            +e.__text Мои отзывы
+                                    +e.__item
+                                        +e('a').__link(href="/" aria-label="")
+                                            +icon('i-mail')
+                                            +e.__text Подписки
+                                    +e.__item
+                                        +e('a').__link(href="/" aria-label="")
+                                            +icon('i-logout')
+                                            +e.__text Выйти
+                    +b('a').header-cart(href="cart.html")
+                        +e.__head
+                            +e.__icon
+                                +icon('i-cart')
+                                +e.__count 10
+                            +e.__head-text 50 000 P
+        +e.__bottom-line
+            .container
+                +b('nav').nav.nav--bottom.header__bottom-line-nav
+                    +e('ul').__list
+                        +e('li').__item
+                            +e('a').__link(href="/" aria-label="") Крупная бытовая техника
+                        +e('li').__item
+                            +e('a').__link(href="/" aria-label="") Техника для кухни
+                        +e('li').__item
+                            +e('a').__link(href="/" aria-label="") Приготовление пищи
+                        +e('li').__item
+                            +e('a').__link(href="/" aria-label="") Выпечка
+                        +e('li').__item
+                            +e('a').__link(href="/" aria-label="") Приготовление напитков
+                        +e('li').__item
+                            +e('a').__link(href="/" aria-label="") Чистота и комфорт в доме
+                        +e('li').__item
+                            +e('a').__link(href="/" aria-label="") Красота и здоровье
+                        +e('li').__item
+                            +e('a').__link(href="/" aria-label="") Аксессуары
+    +b.mobile-nav.js-mobile-nav
+        +e.__inner
+            +e.__catalog
+                a(href="/")
+                    img(src="./assets/imgs/categories/cat-mobile.jpg" alt="img")
+                    span Каталог товаров
+            +b('nav').nav.nav--mobile
+                +e('ul').__list
+                    +e('li').__item.active
+                        +e('a').__link(href="/" aria-label="") Бренды
+                    +e('li').__item
+                        +e('a').__link(href="/" aria-label="") Доставка
+                    +e('li').__item.has-submenu
+                        +e('a').__link(href="/" aria-label="") Покупателям
+                        +e.__toggle
+                        +e('ul').__lvl2-list
+                            +e('li').__lvl2-item
+                                +e('a').__lvl2-link(href="/" aria-label="") Сервис
+                            +e('li').__lvl2-item.active
+                                +e('a').__lvl2-link(href="/" aria-label="") Гарантия
+                            +e('li').__lvl2-item
+                                +e('a').__lvl2-link(href="/" aria-label="") Сервисные центры
+                            +e('li').__lvl2-item
+                                +e('a').__lvl2-link(href="/" aria-label="") Обмен
+                            +e('li').__lvl2-item
+                                +e('a').__lvl2-link(href="/" aria-label="") Как купить
+                    +e('li').__item.has-submenu
+                        +e('a').__link(href="/" aria-label="") О компании
+                        +e.__toggle
+                        +e('ul').__lvl2-list
+                            +e('li').__lvl2-item
+                                +e('a').__lvl2-link(href="/" aria-label="") Второй уровень 1
+                            +e('li').__lvl2-item
+                                +e('a').__lvl2-link(href="/" aria-label="") Второй уровень 2
+                            +e('li').__lvl2-item
+                                +e('a').__lvl2-link(href="/" aria-label="") Второй уровень 3
+                            +e('li').__lvl2-item
+                                +e('a').__lvl2-link(href="/" aria-label="") Второй уровень 4
+                    +e('li').__item
+                        +e('a').__link(href="/" aria-label="") Контакты
+            +e.__contacts
+                +e('a').__item(href="tel:+74952231577") +7 (495) 223-15-77
+                +e.__item пн-вс 09:00 - 19:00
+                +e.__full-item
+                    a(
+                        href="javascript:;"
+                        data-target="#modal-feedback"
+                        data-toggle="modal"
+                    ).btn.btn--gray.btn--small Заказать звонок

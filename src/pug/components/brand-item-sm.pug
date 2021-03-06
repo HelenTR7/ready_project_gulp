@@ -1,0 +1,5 @@
+mixin brand-item-sm(args={})
+    +b('a').brand-item-sm(href="brand.html")
+        +e('img').__img.swiper-lazy(
+            data-src=args.img
+            alt=args.title)

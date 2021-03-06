@@ -1,0 +1,252 @@
++b('section').product-tabs.js-tabs
+    .container
+        +e('ul').__titles.js-tabs-titles
+            li.active
+                span Описание
+            li
+                span Характеристики
+            li
+                span Обзоры
+            li
+                span Отзывы
+                    b 4
+            li
+                span Инструкция
+            li
+                span Рецепты
+        +e.__items.js-tabs-items
+            +e.__item.active
+                +e.__mobile-title.js-toggle-title Описание
+                +e.__mobile-body.max-w-1000.content
+                    .h3 Описание
+                    p Рожковая кофеварка Rommelsbacher EKS 3010 Silver номинальной мощностью 2225 Вт имеет встроенную систему нагрева в виде термоблока. На корпусе расположены индикаторы включения и уровня воды в колбе. Используя технику, можно приготовить капучино и эспрессо, для чего закладывается как молотый кофе, так и чалды. Рожок – металлический. Производителем предусмотрено одновременное приготовление двух чашек напитка, а также подача горячей воды и подогрев установленных емкостей.
+                    img(src="./assets/imgs/pr.jpg" alt="pr")
+                    p Для удобства эксплуатации предусмотрена автоматическая декальцинация устройства (очистка от образовавшейся накипи), а также противокапельная система. Имеется опция автоматического отключения устройства при отсутствии воды в колбе.
+                    p Другие характеристики:
+                    ul
+                        li предельно допустимый уровень давления помпы – 19 бар;
+                        li максимальный объем колбы для воды – 1,5 л;
+                        li устройство работает от сети с напряжением 220-240 В.
+                    p Капучинатор в данной модели ручной. Управление – механическое, имеется регулировка объема порций. Поддон для сбора капель съемный, с металлической решеткой. Корпус выполнен из нержавеющей стали в серебристом оттенке. Длина сетевого шнура – 1 м. Габариты изделия – 33х37х28,9 см, вес – 7,5 кг.
+            +e.__item
+                +e.__mobile-title.js-toggle-title Технические характеристики
+                +e.__mobile-body.content
+                    .h3 Технические характеристики
+                    .row
+                        .col-md-6
+                            table
+                                tr
+                                    td Количество групп
+                                    td 1
+                                tr
+                                    td Используемый кофе
+                                    td молоты/чалды
+                                tr
+                                    td Материал рожка
+                                    td металл
+                                tr
+                                    td Тип нагревателя
+                                    td термоблок
+                                tr
+                                    td Мощность
+                                    td 2225 Вт
+                                tr
+                                    td Объем
+                                    td 1.5 k
+                                tr
+                                    td Максимальное давление
+                                    td 19 бар
+                                tr
+                                    td Манометр
+                                    td нет
+                                tr
+                                    td Настройки
+                                    td регулировка порции горячей воды, предварительное смачивание
+                                tr
+                                    td Автоматическая декальцинация
+                                    td нет
+                                tr
+                                    td Приготовление капучино
+                                    td есть, ручное приготовление
+                                tr
+                                    td Тип напитка
+                                    td капучино, эспрессо
+                                tr
+                                    td Противокапельная система
+                                    td есть
+                                tr
+                                    td Дисплей
+                                    td нет
+                                tr
+                                    td Плита автоподогрева
+                                    td есть
+                                tr
+                                    td Съемный лоток для сбора капель
+                                    td нет
+                        .col-md-6
+                            table
+                                tr
+                                    td Марка
+                                    td CASO
+                                tr
+                                    td Модель
+                                    td Touch VAC
+                                tr
+                                    td Применение
+                                    td Бытовой
+                                tr
+                                    td Страна марки
+                                    td Германия
+                                tr
+                                    td Страна производства
+                                    td Китай
+                                tr
+                                    td Срок гарантии
+                                    td 2 года
+                                tr
+                                    td Ширина
+                                    td 36 см
+                                tr
+                                    td Высота
+                                    td 8 см
+                                tr
+                                    td Глубина
+                                    td 15 см
+                                tr
+                                    td Вес
+                                    td 1.33 кг
+                                tr
+                                    td Материал корпуса
+                                    td Пластик
+                                tr
+                                    td Цвет корпуса
+                                    td черный, серый
+                                tr
+                                    td Мощность
+                                    td 110 Вт
+                            .h3 Упаковка
+                            table
+                                tr
+                                    td Ширина
+                                    td 36 см
+                                tr
+                                    td Высота
+                                    td 8 см
+                                tr
+                                    td Глубина
+                                    td 15 см
+                                tr
+                                    td Вес
+                                    td 1.33 кг
+                                tr
+                                    td Артикул производителя:
+                                    td 2545
+                                tr
+                                    td EAN
+                                    td 40548784242458
+            +e.__item
+                +e.__mobile-title.js-toggle-title Обзоры
+                +e.__mobile-body.content
+                    .h3 Обзоры
+                    +b.review
+                        +e.__item
+                            +lazy-img({
+                                img: './assets/imgs/pr-small.jpg',
+                                placeholder: pixel,
+                                img_mod: 'review__img',
+                                wrap_mod: 'review__img-wrap',
+                                link: true,
+                                aria_label: true,
+                            })
+                            +e.__body
+                                +e.__title Обзор кофеварки Rommelsbacher EKS 3010
+                                +e.__text Rommelsbacher основана инженером Густавом Роммельсбахером в 1928 году. ... Изначально компания выпускала электрические плиты под торговой маркой Robusta, которая до сих пор широко известна своей бытовой техникой.
+                                +e.__btn
+                                    a(href="").btn.btn--bordered.btn--small Читать далее
+                        +e.__youtube
+                            +e.__youtube-inner.js-youtube
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/5-mT9D4fdgQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen enablejsapi="true"></iframe>
+            +e.__item
+                +e.__mobile-title.js-toggle-title Отзывы
+                +e.__mobile-body.content
+                    .h3 Отзывы
+                    +b.product-comments.row
+                        +e.__list.col-md-8
+                            include comment-item
+                            +comment-item({
+                                withAnswer: true,
+                            })
+                            +comment-item()
+                            +comment-item()
+                            +comment-item()
+                            .btn-more-wrap
+                                a(href="catalog.html").btn.btn-more.loading
+                                    +icon('i-more')
+                                    span.text Показать еще 10 отзывов
+                        +e.__right.col-md-4
+                            +e.__btn
+                                a(href="").btn.btn--bordered.btn--full Написать отзыв
+                            +e.__rating-block
+                                +e.__rating-top
+                                    b 4.0
+                                    span 4 оценки
+                                +b.rating.rating--big.product-comments__rating
+                                    +e.__stars(data-stars="4")
+                                        span.star
+                                        span.star
+                                        span.star
+                                        span.star
+                                        span.star
+                            +e.__rating-list
+                                mixin line(args={})
+                                    +b.r-line
+                                        +e.__star
+                                        +e.__mark=args.mark
+                                        +e.__line
+                                            +e.__line-active(style=args.percent)
+                                        +e.__count=args.count
+                                +line({
+                                    mark: 5,
+                                    count: 2,
+                                    percent: 'width:50%'
+                                })
+                                +line({
+                                    mark: 4,
+                                    count: 2,
+                                    percent: 'width:50%'
+                                })
+                                +line({
+                                    mark: 3,
+                                    count: 0,
+                                })
+                                +line({
+                                    mark: 2,
+                                    count: 0,
+                                })
+                                +line({
+                                    mark: 1,
+                                    count: 0,
+                                })
+            +e.__item
+                +e.__mobile-title.js-toggle-title Инструкция
+                +e.__mobile-body.content
+                    .h3 Инструкция
+                    +b.gray-block
+                        +icon('i-list2')
+                        +e.__body
+                            +e.__title Инструкция для Кофемашина-кофеварка Rommelsbacher EKS 3010
+                            +e.__btn
+                                a(href="/" download).btn.btn--bordered.btn--small Скачать в формате pdf
+                    .h3 Сертификат
+                    +b.gray-block
+                        +icon('i-list3')
+                        +e.__body
+                            +e.__title Сертификат на бытовую технику Rommelsbacher
+                            +e.__btn
+                                a(href="/" download).btn.btn--bordered.btn--small Просмотреть файл
+            +e.__item
+                +e.__mobile-title.js-toggle-title Рецепты
+                +e.__mobile-body.content
+                    .h3 Рецепты
+                    include recipes-slider
+                    +recipes-slider()

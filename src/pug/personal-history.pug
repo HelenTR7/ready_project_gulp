@@ -1,0 +1,93 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'История заказов'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    +b.personal.container
+        .row
+            +e.__aside.col-lg-3
+                include components/aside
+            +e.__main.col-lg-9
+                +b.pageheader
+                    +e('h1').__title.h2 История заказов
+                +b.history-item
+                    +e.__top
+                         +e.__num Заказ 12345
+                         +e.__date 1 октября 2020
+                         +e.__price 50 000 ₽
+                         +e.__status
+                             .pstatus.process В процессе
+                         +e.__btn
+                            a(href="/").btn.btn--gray.btn--small Повторить заказ
+                    +e.__bottom
+                        +e.__img-wrap
+                            +e('img').__img(src="./assets/imgs/personal/p1.png" alt="img")
+                        +e.__img-wrap
+                            +e('img').__img(src="./assets/imgs/personal/p2.png" alt="img")
+                        +e.__img-wrap
+                            +e('img').__img(src="./assets/imgs/personal/p3.png" alt="img")
+                        +e.__img-wrap
+                            +e('img').__img(src="./assets/imgs/personal/p1.png" alt="img")
+                        +e.__img-wrap
+                            +e('img').__img(src="./assets/imgs/personal/p2.png" alt="img")
+                        +e.__img-wrap
+                            +e('img').__img(src="./assets/imgs/personal/p3.png" alt="img")
+                        +e.__bottom-count +3
+                +b.history-item
+                    +e.__top
+                        +e.__num Заказ 12345
+                        +e.__date 1 октября 2020
+                        +e.__price 50 000 ₽
+                        +e.__status
+                            .pstatus.delivered Доставлен
+                        +e.__btn
+                            a(href="/").btn.btn--gray.btn--small Повторить заказ
+                    +e.__bottom
+                        +e.__img-wrap
+                            +e('img').__img(src="./assets/imgs/personal/p4.png" alt="img")
+                        +e.__img-wrap
+                            +e('img').__img(src="./assets/imgs/personal/p5.png" alt="img")
+                +b.history-item
+                    +e.__top
+                        +e.__num Заказ 12345
+                        +e.__date 1 октября 2020
+                        +e.__price 50 000 ₽
+                        +e.__status
+                            .pstatus.canceled Отменен
+                        +e.__btn
+                            a(href="/").btn.btn--gray.btn--small Повторить заказ
+                    +e.__bottom
+                        +e.__img-wrap
+                            +e('img').__img(src="./assets/imgs/personal/p1.png" alt="img")
+                        +e.__img-wrap
+                            +e('img').__img(src="./assets/imgs/personal/p2.png" alt="img")
+                        +e.__img-wrap
+                            +e('img').__img(src="./assets/imgs/personal/p3.png" alt="img")
+                        +e.__img-wrap
+                            +e('img').__img(src="./assets/imgs/personal/p1.png" alt="img")
+                        +e.__img-wrap
+                            +e('img').__img(src="./assets/imgs/personal/p2.png" alt="img")
+                        +e.__img-wrap
+                            +e('img').__img(src="./assets/imgs/personal/p3.png" alt="img")
+                        +e.__bottom-count +3
+                +b.history-item
+                    +e.__top
+                        +e.__num Заказ 12345
+                        +e.__date 1 октября 2020
+                        +e.__price 50 000 ₽
+                        +e.__status
+                            .pstatus.delivered Доставлен
+                        +e.__btn
+                            a(href="/").btn.btn--gray.btn--small Повторить заказ
+                    +e.__bottom
+                        +e.__img-wrap
+                            +e('img').__img(src="./assets/imgs/personal/p4.png" alt="img")
+                        +e.__img-wrap
+                            +e('img').__img(src="./assets/imgs/personal/p5.png" alt="img")
+
+
+
+

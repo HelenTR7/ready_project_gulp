@@ -1,0 +1,39 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'Личные данные'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    +b.personal.container
+        .row
+            +e.__aside.col-lg-3
+                include components/aside
+            +e.__main.col-lg-9
+                +b.pageheader
+                    +e('h1').__title.h2 Личные данные
+                +e('form').__form
+                    .fieldgroup.fieldgroup--modal
+                        label.label Ваше ФИО *
+                        input.input(type="text" placeholder="Введите имя" value="Александра Константинопольская" required)
+                    .fieldgroup.fieldgroup--modal
+                        label.label E-mail *
+                        input.input(type="email" placeholder="E-mail" value="alexandra@gmail.com" required)
+                    .fieldgroup.fieldgroup--modal
+                        label.label Телефон *
+                        input.input(type="tel" placeholder="Введите телефон" value="+7 123 45 67 89" required)
+                    .fieldgroup.fieldgroup--modal
+                        button.btn.btn--primary Сохранить личные данные
+                    +e.__title.h2 Смена пароля
+                    .fieldgroup.fieldgroup--modal
+                        label.label Действующий пароль
+                        input.input(type="text" placeholder="Введите действующий пароль")
+                    .fieldgroup.fieldgroup--modal
+                        label.label Новый пароль
+                        input.input(type="text" placeholder="Введите новый пароль")
+                    .fieldgroup.fieldgroup--modal
+                        label.label Подтвердите новый пароль
+                        input.input(type="text" placeholder="Повторите новый пароль")
+                    .fieldgroup.fieldgroup--modal
+                        button.btn.btn--primary Сменить пароль

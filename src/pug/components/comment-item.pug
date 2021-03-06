@@ -1,0 +1,34 @@
+mixin comment-item(args={})
+    +b.comment-item
+        +e.__inner
+            +e.__top
+                +e.__name Анастасия
+                +b.rating.rating--medium.comment-item__rating
+                    +e.__stars(data-stars="4")
+                        span.star
+                        span.star
+                        span.star
+                        span.star
+                        span.star
+                +e.__status
+                    +icon('i-like')
+                    span.text Рекомендую
+                +e.__date 1 сентября 2020
+            +e.__content
+                p Выражаю благодарность сотрудникам магазина. Заказывала у Вас впервые. Не успела дооформить заказ и со мной уже связался оператор. Заказала 26 августа, а 29-го мультиварка уже была дома. Упаковано очень хорошо, все аккуратно - не придраться. Все чаши керамическая, стальная и сама мультиварка без царапин и потертостей. И цены радуют. Обслуживание на 5. Спасибо Вашему магазину!
+            +e.__mobile-top
+                +e.__date 1 сентября 2020
+                +e.__status
+                    +icon('i-like')
+                    span.text Рекомендую
+        if(args.withAnswer)
+            +e.__answer
+                +e.__answer-title Ответ магазина
+                +e.__answer-text Спасибо за вашу оценку!
+        if(args.withProduct)
+            +e.__product
+                +e.__product-img-wrap
+                    +e('img').__product-img(src="./assets/imgs/personal/p1.png" alt="img")
+                +e.__product-body
+                    +e.__product-title Кофемашина Rommelsbacher EKS 2010
+                    +e.__product-price 24 890 Р

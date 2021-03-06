@@ -1,0 +1,155 @@
+@import "../main/parameters";
+
+.comment-item {
+  margin: 0 0 60px;
+  &__inner {}
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 0 10px;
+  }
+  &__name {
+    font-weight: 500;
+    font-size: 14px;
+    color: $c-text4;
+  }
+  &__rating {
+    margin-left: 15px;
+  }
+  &__status {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: $c-primary;
+    font-weight: 500;
+    font-size: 14px;
+    margin-left: 30px;
+    .icon {
+      height: 18px;
+      width: 18px;
+      fill: $c-primary;
+    }
+    .text {
+      padding-left: 10px;
+    }
+  }
+  &__date {
+    margin-left: auto;
+    font-size: 14px;
+    color: #787878;
+  }
+  &__content {
+    font-size: 15px;
+    line-height: 28px;
+    color: $c-text4;
+  }
+  &__answer {
+    background: #F8F8F8;
+    border-radius: 5px;
+    padding: 17px 30px 20px;
+    margin-top: 25px;
+  }
+  &__answer-title {
+    font-weight: 500;
+    font-size: 14px;
+    color: #858093;
+  }
+  &__answer-text {
+    font-size: 15px;
+    line-height: 28px;
+    color: #000000;
+  }
+
+  &__product {
+    margin: 20px 0 70px;
+    background: #FFFFFF;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    &:not(:last-child) {
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -32px;
+        height: 1px;
+        left: 0;
+        right: 0;
+        background: #DCDCDC;
+      }
+    }
+
+  }
+  &__product-img-wrap {
+    max-width: 83px;
+    flex: 0 0 83px;
+  }
+  &__product-img {
+    width: 100%;
+    height: auto;
+  }
+  &__product-body {
+    padding-left: 15px;
+    flex: 1;
+  }
+  &__product-title {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 25px;
+    color: $c-text4;
+    margin: 0 0 10px;
+  }
+  &__product-price {
+    font-weight: 600;
+    font-size: 20px;
+    color: $c-text4;
+  }
+  &__mobile-top {
+    display: none;
+  }
+}
+
+@media (max-width: $sm - 1) {
+  .comment-item {
+    margin: 0 0 30px;
+    &__name {
+      font-size: 13px;
+    }
+    &__content {
+      font-size: 12px;
+      line-height: 24px;
+    }
+    &__top {
+      .comment-item__date,
+      .comment-item__status {
+        display: none;
+      }
+    }
+    &__mobile-top {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      .comment-item__date {
+        margin-left: 0;
+        font-size: 13px;
+      }
+      .comment-item__status {
+        font-size: 13px;
+      }
+    }
+    &__answer {
+      padding: 15px 20px;
+    }
+    &__answer-title {
+      font-size: 13px;
+    }
+    &__answer-text {
+      font-size: 13px;
+    }
+  }
+}

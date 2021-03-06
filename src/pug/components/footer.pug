@@ -1,0 +1,75 @@
++b('footer').footer
+    +e.__main
+        .container
+            .row
+                +e.__col
+                    +b.footer-block
+                        +e.__title.js-toggle-title Компания
+                        +e.__body
+                            +b('nav').nav.nav--footer
+                                +e('ul').__list
+                                    +e('li').__item.active
+                                        +e('a').__link(href="/" aria-label="") Бренды
+                                    +e('li').__item
+                                        +e('a').__link(href="/" aria-label="") О компании
+                                    +e('li').__item
+                                        +e('a').__link(href="/" aria-label="") Корпоративный отдел
+                                    +e('li').__item
+                                        +e('a').__link(href="/" aria-label="") Партнёрам
+                                    +e('li').__item
+                                        +e('a').__link(href="/" aria-label="") Контакты
+                +e.__col
+                    +b.footer-block
+                        +e.__title.js-toggle-title Покупателям
+                        +e.__body
+                            +b('nav').nav.nav--footer
+                                +e('ul').__list
+                                    +e('li').__item
+                                        +e('a').__link(href="/" aria-label="") Доставка
+                                    +e('li').__item
+                                        +e('a').__link(href="/" aria-label="") Оплата
+                                    +e('li').__item
+                                        +e('a').__link(href="/" aria-label="") Обмен и возврат
+                                    +e('li').__item
+                                        +e('a').__link(href="/" aria-label="") Гарантия
+                                    +e('li').__item
+                                        +e('a').__link(href="/" aria-label="") Сервисные центры
+                +e.__col2
+                    +b.footer-block
+                        +e.__title.js-toggle-title Каталог
+                        +e.__body
+                            +b('nav').nav.nav--footer.nav--footer-col
+                                +e('ul').__list
+                                    +e('li').__item
+                                        +e('a').__link(href="/" aria-label="") Крупная бытовая техника
+                                    +e('li').__item
+                                        +e('a').__link(href="/" aria-label="") Приготовление напитков
+                                    +e('li').__item
+                                        +e('a').__link(href="/" aria-label="") Техника для кухни
+                                    +e('li').__item
+                                        +e('a').__link(href="/" aria-label="") Чистота и комфорт в доме
+                                    +e('li').__item
+                                        +e('a').__link(href="/" aria-label="") Приготовление пищи
+                                    +e('li').__item
+                                        +e('a').__link(href="/" aria-label="") Красота и здоровье
+                                    +e('li').__item
+                                        +e('a').__link(href="/" aria-label="") Выпечка
+                                    +e('li').__item
+                                        +e('a').__link(href="/" aria-label="") Аксессуары
+                +e.__col.footer__col--last
+                    +b.footer-block
+                        +e.__title Мы в соц. сетях
+                        +e.__body
+                            +e.__socials
+                                +e('a').__social.vk(href="/")
+                                    +icon('i-vk')(style='height:12px; width:21px')
+                                +e('a').__social.insta(href="/")
+                                    +icon('i-insta')(style='height:20px; width:20px')
+                    +b.footer-block
+                        +e.__title Контакты
+                        +e.__body
+                            +e('a').__item(href="tel:+74952231577") +7 (495) 223-15-77
+                            +e('a').__item(href="mailto:sale@comfort-max.ru") sale@comfort-max.ru
+    +e.__bottom
+        .container
+            p © 2020 Интернет-магазин COMFORT-MAXIMUM - качественная техника немецких марок

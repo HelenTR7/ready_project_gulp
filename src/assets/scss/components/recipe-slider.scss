@@ -1,0 +1,18 @@
+@import "../main/parameters";
+
+.recipes-slider {
+  position: relative;
+  &__slide {}
+}
+.recipes-sm-slider {}
+
+@media (max-width: $sm - 1) {
+  .recipes-sm-slider,
+  .recipes-slider {
+    margin-right: -15px;
+    &__slide {
+      max-width: 260px;
+    }
+  }
+
+}

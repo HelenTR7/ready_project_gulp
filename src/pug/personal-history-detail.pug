@@ -1,0 +1,91 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'Заказ №12345'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    +b.personal.container
+        .row
+            +e.__aside.col-lg-3
+                include components/aside
+            +e.__main.col-lg-9
+                +b.pageheader
+                    +e('h1').__title.h2 Заказ №12345
+                +b.detail-top
+                    dl.flex
+                        dt Статус
+                        dd
+                            .pstatus.process В процессе
+                    dl
+                        dt Дата
+                        dd 1 октября 2020
+                    dl
+                        dt Способ доставки
+                        dd Курьерская доставка по Москве <br>300 Р
+                    dl
+                        dt Способ оплаты
+                        dd Наличные при получении
+                    dl
+                        dt Адрес доставки
+                        dd Россия, Москва, пр. Мира, д. 10, к. 1, кв. 10
+                    dl
+                        dt Получатель
+                        dd Александра Константинопольская <br>+7 123 45 67 89
+                    dl
+                        dt Сумма заказа
+                        dd 100 000 Р
+                +e.__title.h2 Состав заказа
+
+                +b.detail-item
+                    +e.__img-wrap
+                        +e('img').__img(src="./assets/imgs/personal/p1.png" alt="img")
+                    +e.__title Кофемашина CASO Café Crema One
+                    +e.__right
+                        +e.__right-i
+                            span.title Цена за 1 шт
+                            span.text 24 890 Р
+                        +e.__right-i
+                            span.title Кол-во
+                            span.text 1
+                        +e.__right-i
+                            span.title Итого
+                            span.text 24 890 Р
+                +b.detail-item
+                    +e.__img-wrap
+                        +e('img').__img(src="./assets/imgs/personal/p2.png" alt="img")
+                    +e.__title Кофемашина CASO Café Crema One
+                    +e.__right
+                        +e.__right-i
+                            span.title Цена за 1 шт
+                            span.text 24 890 Р
+                        +e.__right-i
+                            span.title Кол-во
+                            span.text 1
+                        +e.__right-i
+                            span.title Итого
+                            span.text 24 890 Р
+                +b.detail-item
+                    +e.__img-wrap
+                        +e('img').__img(src="./assets/imgs/personal/p3.png" alt="img")
+                    +e.__title Кофемашина CASO Café Crema One
+                    +e.__right
+                        +e.__right-i
+                            span.title Цена за 1 шт
+                            span.text 24 890 Р
+                        +e.__right-i
+                            span.title Кол-во
+                            span.text 1
+                        +e.__right-i
+                            span.title Итого
+                            span.text 24 890 Р
+                +b.detail-total
+                    +e.__top
+                        p 3 товара на сумму: <b>100 000 Р</b>
+                    +e.__bottom
+                        a(href="/")
+                            +icon('i-arr-l')
+                            span Вернуться к истории заказов
+
+

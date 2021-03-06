@@ -1,0 +1,59 @@
+@import "../main/parameters";
+
+.swiper-button-disabled {
+  display: none!important;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  border-radius: 50%;
+  border: 1px solid $c-primary;
+  background: rgba(0,0,0,0.0);
+  position: relative;
+  transition: all ease 0.3s;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    height: 10px;
+    width: 10px;
+    border-top: 1px solid $c-primary;
+    border-right: 1px solid $c-primary;
+    transition: all ease 0.3s;
+  }
+  &:hover {
+    background: $c-primary;
+    transition: all ease 0.3s;
+    &::after {
+      border-color: #fff;
+      transition: all ease 0.3s;
+    }
+  }
+}
+.swiper-button-prev::after {
+  transform: rotate(-135deg);
+  left: 13px;
+}
+.swiper-button-next::after {
+  transform: rotate(45deg);
+  right: 13px;
+}
+
+
+.swiper-button-prev--tr {
+  top: -37px!important;
+  left: auto!important;
+  right: 45px!important;
+}
+.swiper-button-next--tr {
+  top: -37px!important;
+  right: 0!important;
+}
+
+.swiper-button-prev--about {
+  margin-top: -5px!important;
+  left: -50px!important;
+}
+.swiper-button-next--about {
+  margin-top: -5px!important;
+  right: -50px!important;
+}

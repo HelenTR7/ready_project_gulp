@@ -1,0 +1,18 @@
+mixin recipe-item(args={})
+    +b('a')(class=args.mod_class || 'recipe-item' href="recipe.html")
+        +e.__img-wrap
+            +e('img').__img.swiper-lazy(
+                data-src=args.img
+                alt=args.title)
+        +e.__body
+            +e.__title=args.title
+
+mixin recipe-item-sm(args={})
+    +b('a')(class=args.mod_class || 'recipe-item-sm' href="recipe.html")
+        +e.__img-wrap
+            +e('img').__img.swiper-lazy(
+                data-src=args.img
+                alt=args.title)
+        +e.__body
+            +e.__title=args.title
+            +e.__text=args.text

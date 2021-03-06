@@ -1,0 +1,53 @@
+@import "../main/parameters";
+
+.products-slider {
+  padding: 18px 0 38px;
+  &__title {
+    margin: 0 0 20px;
+  }
+  &__swiper {
+    position: relative;
+  }
+  .swiper-container {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  &__slide {
+    padding: 10px;
+  }
+}
+
+.products-slider--sm-title {
+  .products-slider__title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: $sm - 1) {
+  .products-slider {
+    padding: 18px 0;
+    &__swiper {
+      margin-right: -15px;
+    }
+    .swiper-container {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: none;
+    }
+    &__title {
+      margin-bottom: 20px;
+    }
+    &__slide {
+      max-width: 110px;
+      padding: 0;
+    }
+  }
+  .products-slider--sm-title {
+    .products-slider__title {
+      font-size: 18px;
+    }
+  }
+}

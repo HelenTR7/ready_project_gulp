@@ -1,0 +1,98 @@
+@import "../main/parameters";
+
+.about {
+  margin-bottom: 60px;
+  .h2 {
+    font-size: 24px;
+  }
+  &__swiper {
+    position: relative;
+    margin: 0 0 20px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 17px;
+      left: calc(50% - 50vw);
+      width: 100vw;
+      height: 4px;
+      background: $c-primary;
+    }
+    .swiper-container {
+      padding: 52px 0 0;
+    }
+  }
+}
+
+.about-item {
+  background: #FFFFFF;
+  border: 1px solid #E9E9E9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 20px 20px 10px;
+  min-height: 185px;
+  margin: 0 0 20px;
+  position: relative;
+  &::before {
+    position: absolute;
+    top: -45px;
+    left: 0;
+    content: '';
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12.5' cy='12.5' r='9.5' fill='%23DB332D' stroke='white' stroke-width='6'/%3E%3C/svg%3E%0A");
+    background-size: contain;
+
+  }
+  &__date {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    color: $c-primary;
+    margin: 0 0 13px;
+  }
+  &__text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+    min-height: 52px;
+    margin: 0 0 15px;
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  &__flag {
+    img {
+      margin: 0!important;
+    }
+  }
+  &__country {
+    padding-left: 15px;
+    font-size: 13px;
+    color: $c-text;
+  }
+}
+
+@media (max-width: $sm - 1) {
+  .about {
+    .h2,h2 {
+      font-size: 14px;
+      line-height: 24px;
+    }
+    &__slide {
+      max-width: 244px;
+    }
+    &__swiper {
+      margin-right: -15px;
+      &::before {
+        left: calc(50% - 50vw - 7.5px);
+      }
+      .swiper-button-prev,
+      .swiper-button-next {
+        display: none;
+      }
+    }
+  }
+}

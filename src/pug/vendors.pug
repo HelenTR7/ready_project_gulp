@@ -1,0 +1,23 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'Вендоры'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    include components/breadcrumb
+    +breadcrumb({
+        content1: 'Вендоры'
+    })
+    +b('section').pageheader
+        .container
+            +e('h1').__title.h1 Вендоры
+    .container.vendors
+        .row
+            include ./components/vendor-item
+            include ./data/vendorsList
+            each  list in vendorsList
+                .col-12.col-sm-6.col-md-4.col-lg-3
+                    +vendor-item(list)
+

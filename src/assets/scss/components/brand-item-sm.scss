@@ -1,0 +1,39 @@
+@import "../main/parameters";
+
+.brand-item-sm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  width: 140px;
+  height: 83px;
+  background: #F2F2F2;
+  border-radius: 15px;
+  &__img {
+    filter: grayscale(100%);
+    display: block;
+    max-width: 100%;
+    height: auto;
+    max-height: 28px;
+  }
+  &:hover {
+    .brand-item-sm__img {
+      filter: grayscale(0%);
+    }
+  }
+}
+
+@media (max-width: $lg - 1) {
+  .brand-item-sm {
+    width: calc(25% - 15px);
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: $xs - 1) {
+  .brand-item-sm {
+    height: 60px;
+    width: calc(50% - 5px);
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,129 @@
+mixin filters-form(args={})
+    form(action="" class=args.mod_class).filters-form
+        .filter-block
+            .filter-block__title.active
+                span.title Цена
+                a(href="javascript:;").clear.js-clear-block
+                    +icon('i-delete')
+            .filter-block__fields
+                .range
+                    .range__slider
+                        input(type="text" class='js-range-slider' data-min="0" data-max="15000" id="price" name="price" value="")
+                    .range__controls
+                        .range__control.fieldgroup
+                            input.input(type="text" class='js-range-from' id="pricefrom" name="pricefrom" value="0")
+                        .range__control.fieldgroup
+                            input.input(type="text" class='js-range-to' id="priceto" name="priceto" value="0")
+        .filter-block
+            .filter-block__title.active
+                span.title Производитель
+                a(href="javascript:;").clear.js-clear-block
+                    +icon('i-delete')
+            .filter-block__fields.filter-block__fields--manufacturer
+                label.checkbox-item
+                    input(type="checkbox" name="manufacturer")
+                    span.label AEG <b>24</b>
+                label.checkbox-item
+                    input(type="checkbox" name="manufacturer" checked)
+                    span.label CASO <b>5</b>
+                label.checkbox-item
+                    input(type="checkbox" name="manufacturer")
+                    span.label Ellrona <b>53</b>
+                label.checkbox-item
+                    input(type="checkbox" name="manufacturer" checked)
+                    span.label Princess <b>7</b>
+                label.checkbox-item
+                    input(type="checkbox" name="manufacturer")
+                    span.label Profi Cook <b>2</b>
+                label.checkbox-item
+                    input(type="checkbox" name="manufacturer")
+                    span.label Solis <b>24</b>
+                label.checkbox-item
+                    input(type="checkbox" name="manufacturer")
+                    span.label Steba <b>28</b>
+                label.checkbox-item
+                    input(type="checkbox" name="manufacturer")
+                    span.label Bomann <b>21</b>
+                label.checkbox-item
+                    input(type="checkbox" name="manufacturer")
+                    span.label Clatronic <b>24</b>
+                label.checkbox-item
+                    input(type="checkbox" name="manufacturer")
+                    span.label Emerio <b>14</b>
+                label.checkbox-item
+                    input(type="checkbox" name="manufacturer")
+                    span.label Profi Care <b>24</b>
+                label.checkbox-item
+                    input(type="checkbox" name="manufacturer")
+                    span.label Rommelsbacher <b>22</b>
+                label.checkbox-item
+                    input(type="checkbox" name="manufacturer")
+                    span.label Status <b>75</b>
+                label.checkbox-item
+                    input(type="checkbox" name="manufacturer")
+                    span.label Tristar <b>57</b>
+        .filter-block
+            .filter-block__title
+                span.title Тип управления
+                a(href="javascript:;").clear.js-clear-block
+                    +icon('i-delete')
+            .filter-block__fields
+                label.checkbox-item
+                    input(type="checkbox" name="management")
+                    span.label Механический
+                label.checkbox-item
+                    input(type="checkbox" name="management")
+                    span.label Сенсорный
+                label.checkbox-item
+                    input(type="checkbox" name="management")
+                    span.label Электронный
+        .filter-block
+            .filter-block__title
+                span.title Тип используемого кофе
+                a(href="javascript:;").clear.js-clear-block
+                    +icon('i-delete')
+            .filter-block__fields
+                label.checkbox-item
+                    input(type="checkbox" name="coffe")
+                    span.label Зерновой
+                label.checkbox-item
+                    input(type="checkbox" name="coffe")
+                    span.label Молотый
+        .filter-block
+            .filter-block__title
+                span.title Одновременное приготовление двух чашек
+                a(href="javascript:;").clear.js-clear-block
+                    +icon('i-delete')
+            .filter-block__fields
+                label.checkbox-item
+                    input(type="checkbox" name="double")
+                    span.label Есть
+        .filter-block
+            .filter-block__title
+                span.title Цвет
+                a(href="javascript:;").clear.js-clear-block
+                    +icon('i-delete')
+            .filter-block__fields
+                label.checkbox-item
+                    input(type="checkbox" name="color")
+                    span.label нержавеющая сталь
+                label.checkbox-item
+                    input(type="checkbox" name="color")
+                    span.label черный
+                label.checkbox-item
+                    input(type="checkbox" name="color" checked)
+                    span.label серебристый
+                label.checkbox-item
+                    input(type="checkbox" name="color")
+                    span.label золотой
+                label.checkbox-item
+                    input(type="checkbox" name="color")
+                    span.label белый
+                label.checkbox-item
+                    input(type="checkbox" name="color")
+                    span.label синий
+                label.checkbox-item
+                    input(type="checkbox" name="color")
+                    span.label красный
+        .filters-form_clear
+            button.btn.btn-clear Очистить все

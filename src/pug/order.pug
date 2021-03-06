@@ -1,0 +1,158 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'Оформление заказа'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    +b.order.container
+        .row
+            +e.__main.col-lg-8
+                +b.pageheader
+                    +e('h1').__title.h1 Оформление заказа
+                +b.order-block
+                    +e.__title Укажите страну и город
+                    +e.__fields
+                        .fieldgroup
+                            label.label Страна *
+                            select.js-formstyler
+                                option Россия
+                                option Беларусь
+                                option Украина
+                        .fieldgroup
+                            label.label Город *
+                            select.js-formstyler(
+                                data-placeholder="Выберите из списка"
+                                data-search-placeholder="Введите название города")
+                                option
+                                option Москва
+                                option Санкт Петербург
+                                option Новосибирск
+                                option Екатеринбург
+                                option Казань
+                                option Нижний Новгород
+                                option Челябинск
+                                option Самара
+                                option Омск
+                                option Ростов-на-Дону
+                +b.order-block
+                    +e.__title Выберите способ доставки
+                    +e.__fields
+                        .fieldgroup.fieldgroup--mb-sm
+                            label.radio-item.radio-item--big
+                                input(type="radio" name="delivery")
+                                span.label
+                                    span.text Самовывоз из нашего магазина
+                                    span.text2 г. Люберцы, РП Томилино, 23-й км Новорязанского ш., д. 21.
+                                    span.text2 Бесплатно, сегодня
+                        .fieldgroup.fieldgroup--mb-sm
+                            label.radio-item.radio-item--big
+                                input(type="radio" name="delivery" checked)
+                                span.label
+                                    span.text Доставка курьером по Москве
+                                    span.text2 <b>300 Р</b>, завтра
+                        .fieldgroup.fieldgroup--mb-sm
+                            label.radio-item.radio-item--big
+                                input(type="radio" name="delivery")
+                                span.label
+                                    span.text Почта России
+                                    span.text2 <b>450 Р</b>, от 5 до 10 дней
+                +b.order-block
+                    +e.__title Укажите адрес доставки в г.Москва
+                    +e.__fields
+                        .fieldgroup
+                            label.label Адрес *
+                            input.input(type="text" placeholder="Улица, дом, корпус/строение, квартира *")
+                +b.order-block
+                    +e.__title Выберите способ оплаты
+                    +e.__fields
+                        .fieldgroup.fieldgroup--mb-sm
+                            label.radio-item.radio-item--big
+                                input(type="radio" name="pay")
+                                span.label
+                                    span.text Наличные при получении курьером или в пункте самовывоза
+                        .fieldgroup.fieldgroup--mb-sm
+                            label.radio-item.radio-item--big
+                                input(type="radio" name="pay" checked)
+                                span.label
+                                    span.text Оплата картой или электронными деньгами онлайн. Скидка 2%
+                                    span.imgs
+                                        img(src="./assets/imgs/mastercard.svg" alt="mastercard"
+                                            style="height:16px; width:26px")
+                                        img(src="./assets/imgs/maestro.svg" alt="maestro"
+                                            style="height:16px; width:26px")
+                                        img(src="./assets/imgs/visa.svg" alt="visa"
+                                            style="height:12px; width:40px")
+                                        img(src="./assets/imgs/mir.svg" alt="mir"
+                                            style="height:12px; width:41px")
+                        .fieldgroup.fieldgroup--mb-sm
+                            label.radio-item.radio-item--big
+                                input(type="radio" name="pay")
+                                span.label
+                                    span.text Оплата на расчетный счет в банке (только для юр. лиц и ИП)
+                +b.order-block
+                    +e.__title Получатель заказа
+                    +e.__fields
+                        .fieldgroup
+                            label.label Ваше ФИО *
+                            input.input(type="text" placeholder="Введите ФИО" required)
+                        .fieldgroup
+                            label.label E-mail *
+                            input.input(type="email" placeholder="Введите e-mail" required)
+                        .fieldgroup
+                            label.label Телефон *
+                            input.input(type="tel" placeholder="Введите телефон " required)
+                        .fieldgroup
+                            label.label Комментарии
+                            textarea.textarea(placeholder="Введите комментарии к заказу")
+                        .fieldgroup.fieldgroup--success
+                            label.checkbox-item
+                                input(type="checkbox" name="success" checked)
+                                span.label Я даю согласие на обработку персональных данных и соглашаюсь c политикой конфиденциальности
+                    +e.__submit
+                        button.btn.btn--primary Оформить заказ
+            +e.__info.sticky-info-wrap.js-sticky-wrap.col-lg-4
+                +b.sticky-info.js-sticky
+                    +e.__products
+                        +e.__return
+                            a(href="cart.html")
+                                +icon('i-arr-l')
+                                span Вернуться в корзину
+                        +e.__list
+                            +b.stic-prod.sticky-info__product
+                                +e.__img
+                                    img(src="./assets/imgs/photo1-sm.png" alt="product")
+                                +e.__content
+                                    +e.__title Кофеварка CASO Coffee Compact
+                                    +e.__price 24 890 Р
+                            +b.stic-prod.sticky-info__product
+                                +e.__img
+                                    img(src="./assets/imgs/photo2-sm.png" alt="product")
+                                +e.__content
+                                    +e.__title Кофемашина CASO Café Crema One
+                                    +e.__price 24 890 Р <b>x 2 шт</b>
+                            +b.stic-prod.sticky-info__product
+                                +e.__img
+                                    img(src="./assets/imgs/photo3-sm.png" alt="product")
+                                +e.__content
+                                    +e.__title Кофемашина Rommelsbacher EKS 2010
+                                    +e.__price 24 890 Р
+
+                    +e.__content.sticky-info__content--order
+                        dl
+                            dd 3 товара на сумму:
+                            dt 100 000 Р
+                        dl
+                            dd Доставка:
+                            dt Курьер <br>Завтра, 300 Р
+                        dl
+                            dd Оплата:
+                            dt Картой онлайн
+                        dl
+                            dd Итого:
+                            dt <b>100 300 Р</b>
+                    +e.__btn.sticky-info__btn--mobile
+                        button.btn.btn--primary.btn--full Оформить заказ
+
+

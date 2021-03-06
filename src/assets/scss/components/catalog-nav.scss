@@ -1,0 +1,61 @@
+@import "../main/parameters";
+
+.catalog-nav {
+  margin: 0 0 45px;
+  ul {
+    display: inline;
+  }
+  li {
+    display: inline-block;
+    margin: 0 9px 16px 0;
+    &.active {
+      a {
+        color: $c-primary;
+        border-color: $c-primary;
+      }
+    }
+  }
+  a {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    display: inline-block;
+    padding: 6px 16px;
+    border: 1px solid #E1DBDB;
+    border-radius: 3px;
+    &:hover {
+      color: $c-primary;
+      border-color: $c-primary;
+    }
+  }
+  &__vendors {
+    li.active {
+      a {
+        color: #fff;
+        background: $c-primary;
+      }
+    }
+    a {
+      text-transform: uppercase;
+      color: $c-primary;
+      border-color: $c-primary;
+      &:hover {
+        color: #fff;
+        background: $c-primary;
+      }
+    }
+  }
+}
+
+@media (max-width: $sm - 1)  {
+  .catalog-nav {
+    margin: 0 0 19px;
+    li {
+      margin: 0 6px 12px 0;
+    }
+    a {
+      font-size: 12px;
+      padding: 3px 11px;
+    }
+  }
+}

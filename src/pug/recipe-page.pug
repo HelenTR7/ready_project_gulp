@@ -1,0 +1,87 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'Рецепты - выбранный'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    include components/breadcrumb
+    +breadcrumb({
+        content1: 'Рецепты',
+        href_content1: 'index.html',
+    })
+    +b('section').pageheader
+        .container
+            +e('h1').__title.h1 Апельсиновый кекс - Кухонный комбайн CASO KM 1200
+    +b.content-page.content.container
+        +e.__inner
+            +e.__top.row
+                .content-page__top-left
+                    img(src="./assets/imgs/rec.jpg" alt="img")
+                .content-page__top-right
+                    h3 Ингредиенты
+                    table
+                        tr
+                            td Яйца
+                            td 3 шт
+                        tr
+                            td Сахар
+                            td 120 гр
+                        tr
+                            td Апельсиновый сок
+                            td 160 мл
+                        tr
+                            td Растительное масло
+                            td 50 мл
+                        tr
+                            td Мука
+                            td 240 гр
+                        tr
+                            td Разрыхлитель
+                            td 6 гр
+                        tr
+                            td Щепотка соли
+                            td Щепотка соли
+                        tr
+                            td <strong>Ингредиенты для глазури</strong>
+                            td
+                        tr
+                            td Сахарная пудра
+                            td 100 гр
+                        tr
+                            td Апельсиновый сок
+                            td 60 мл
+                        tr
+                            td Лимонный сок
+                            td 30 мл
+                        tr
+                            td Куркума
+                            td 1 ч.л.
+                        tr
+                            td Цедра апельсина
+                            td Цедра апельсина
+            .h2 Приготовление
+            .content-page__list
+                ol
+                    li Взбить яйца с щепоткой соли и сахаром до белой пышной массы.
+                    li Добавить жидкие ингредиенты - сок и масло. Муку просеять с разрыхлителем и добавить в тесто в 2 этапа, после каждого этапа взбивать тесто на низкой скорости до смешения ингредиентов.
+                    li Разогреть духовку до 180С. Форму смазать маслом, вылить тесто в форму и запекать примерно 30 минут или до сухой зубочистки.
+                    li Для глазури взбить лимонный и апельсиновый сок с сахарной пудрой и куркумой. Готовый кекс остудить полностью и полить глазурью, сверху посыпать цедру апельсина
+            h3.h3 Купить товар
+            include components/product-item
+            +product-item({
+                mod_class: 'product-item--list',
+                inSlider: false,
+                img: './assets/imgs/product1.png',
+                title: 'Кофемашина Rommelsbacher EKS 3010',
+                list: true,
+                price: '59 900 руб',
+                review_stars: 3,
+                review_count: '5 отзывов',
+            })
+    .container
+        .section-title.section-title--recipes.h3 Также будет интересно
+        include components/recipes-slider
+        +recipes-sm-slider()
+
